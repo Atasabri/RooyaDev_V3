@@ -1,0 +1,233 @@
+﻿@model IEnumerable<RooyaDev.Models.Carrer>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.Carrers;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class="active"><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+    <!-- jQuery -->
+    <script src="~/Scripts/Script/jquery.min.js"></script>
+
+}
+<link href="~/Content/Carrer/style.css" rel="stylesheet" />
+<!--start-carrer-->
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image: url(../../images/carrers.jpg); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>@SiteResource.Carrers</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+@if (Model.Count() != 0)
+{
+    <div class="carrer">
+        <div class="container">
+            <div class="carrer-top">
+                <h3>@SiteResource.Carrers</h3>
+            </div>
+            @if (ViewBag.error != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <span class="" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    @ViewBag.error
+                </div>
+            }
+
+            @if (ViewBag.Done != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <span class="" aria-hidden="true"></span>
+                    <span class="sr-only">Done:</span>
+                    @ViewBag.Done
+                </div>
+            }
+            <div class="tabs-box">
+                <ul class="tabs-menu">
+                    @foreach (var item in Model)
+                {
+                        <li><a href="#tab@(item.ID)"><span> </span>@item.Name</a></li>
+                    }
+
+
+                </ul>
+                <div class="clearfix"> </div>
+                <div class="tab-grids">
+                    @foreach (var item in Model)
+                {
+                        <div id="tab@(item.ID)" class="tab-grid">
+                            <div class="tb-one">
+                                <h3>@SiteResource.AboutJob</h3>
+                                <p>@item.Description</p>
+                            </div>
+                            <div class="tb-one">
+                                <h3>@SiteResource.JobType</h3>
+                                <p>@item.Type</p>
+                            </div>
+                            <div class="tb-one">
+                                <h3>@SiteResource.Salary</h3>
+                                <p>@item.Salary</p>
+                            </div>
+                            <div class="tb-one">
+                                <h3>@SiteResource.Location</h3>
+                                <p>@item.Country</p>
+                            </div>
+                            <div class="tb-one">
+                                <h3>@SiteResource.ApplyInthisjob</h3>
+                                <div class="tb-two">
+                                    <form action="~/Home/careers" method="post" enctype="multipart/form-data">
+                                        @Html.Hidden("Carrer_ID", item.ID)
+                                        <input type="text" required name="Name" placeholder="@SiteResource.Name" />
+                                        <input type="text" required name="Email" placeholder="@SiteResource.Email" />
+                                        <input type="text" required name="Phone" id="phone" placeholder="@SiteResource.Phone" />
+                                        <div class="row form-group">
+                                            <div class="upload-btn-wrapper">
+                                                <button class="btn"><i class="icon-paper"></i> @SiteResource.Uploadapdffile</button>
+                                                <input type="file" required name="myfile" />
+                                            </div>
+                                        </div>
+                                        <div class="t-btn">
+                                            <input type="submit" value="@SiteResource.Apply">
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="carrer">
+        <div class="container">
+            <div class="carrer-top">
+                <h3>@SiteResource.NoCarrers</h3>
+            </div>
+            </div>
+        </div>
+  }
+
+            <!----- Comman-js-files ----->
+            <script>
+                $(document).ready(function () {
+                    $("#tab2").hide();
+                    $("#tab3").hide();
+                    $(".tabs-menu a").click(function (event) {
+                        event.preventDefault();
+                        var tab = $(this).attr("href");
+                        $(".tab-grid").not(tab).css("display", "none");
+                        $(tab).fadeIn("slow");
+                    });
+                });
+            </script>
+            <!----- Comman-js-files ----->
+            <script>
+
+                var phone = document.getElementById("phone");
+                phone.onchange = function () {
+                    var p = document.getElementById("phone");
+                    if (p.value.length > 11 || isNaN(p.value)) {
+                        document.getElementById("phone").setCustomValidity("Phone Must Be < 12 Number & No Chars");
+                    } else {
+                        document.getElementById("phone").setCustomValidity('');
+                    }
+                }
+            </script>

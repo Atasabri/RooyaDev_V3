@@ -1,0 +1,49 @@
+﻿@model RooyaDev.Models.Pricing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-laptop"> </i> <label>Pricing Details </label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-laptop"></i>Pricing Details</h3> <hr />
+        <table class="table table-bordered table-hover white">
+            <tr class="alert">
+
+
+            <tr class="alert">
+                <td class="col-md-6">Name</td>
+                <td class="col-md-6">@Model.Name</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Name AR</td>
+                <td class="col-md-6">@Model.Name_AR</td>
+            </tr>
+
+            <tr class="alert">
+                <td class="col-md-6">Photo</td>
+                <td class="col-md-6"><img src="~/Uploads/Pricing/@(Model.ID).jpg" height="200" width="200" /></td>
+            </tr>
+        </table>
+        <a href="~/Pricings/Edit/@Model.ID" class="btn btn-info">edit</a>
+
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model RooyaDev.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-laptop"> </i> <label>User Details </label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-laptop"></i> User Details </h3> <hr />
+        <table class="table table-bordered table-hover white">
+            <tr class="alert">
+                <td class="col-md-6">Name</td>
+                <td class="col-md-6">@Model.Name</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Phone</td>
+                <td class="col-md-6">@Model.Phone</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Email</td>
+                <td class="col-md-6">@Model.Email</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Country</td>
+                <td class="col-md-6">@Model.Country</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Password</td>
+                <td class="col-md-6">@Model.Password</td>
+
+            </tr>
+        </table>
+        <a href="~/Users/Edit/@Model.ID" class="btn btn-info">edit</a>
+
+    </div>
+</div>

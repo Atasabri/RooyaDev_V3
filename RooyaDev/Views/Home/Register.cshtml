@@ -1,0 +1,175 @@
+﻿@model RooyaDev.Models.User
+
+@{
+    Layout = null;
+    string code = "en";
+    string Dir = "";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            Dir = "rtl";
+        }
+    }
+}
+
+<!DOCTYPE html>
+
+<html dir="@Dir" lang="@code">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@SiteResource.Register</title>
+    <meta name="viewport" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="~/images/Ro2iaen.png">
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="~/Content/icomoon.css" rel="stylesheet" />
+    <style>
+        h2 {
+            color: white;
+        }
+    </style>
+    <style>
+         #messages {
+    padding: 15px 10px;
+    margin: 15px 0;
+    border: 1px solid #ff9900;
+	color:#ff9900;
+    text-align:center;
+}
+#messages p {
+    color: #555;
+    font-size: 14px;
+	font-weight:700;
+    text-align:center;
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-offset-4 col-md-4" id="box">
+                <h4>
+                    @if (code == "en")
+                    {
+                        <a href="~/Home/Login" class="btn btn-md btn-danger pull-right">@SiteResource.Login</a>
+                        <a href="~/Home/Language?Code=ar"><img src="~/images/ar.png" /></a>
+                    }
+                    else
+                    {
+                        <a href="~/Home/Language?Code=en" class="pull-right"><img src="~/images/en.png" /></a>
+                        <a href="~/Home/Login" class="btn btn-md btn-danger pull-left">@SiteResource.Login</a>
+                    }
+                </h4>
+                <h2>@SiteResource.Register</h2>
+                @if (ViewBag.error != null)
+                {
+                    <div id="messages">
+                        <h4>@ViewBag.error</h4>
+                    </div>
+                }
+                <hr />
+                <form class="form-horizontal" action="~/Home/Register" method="post" id="contact_form">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-user"></i></span>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @required = "required",@class = "form-control",@placeholder = SiteResource.UserName } })
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-mail"></i></span>
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { type = "email", @required = "required", @class = "form-control", @placeholder =SiteResource.Email } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-lock"></i></span>
+                                    <input name="Password" id="password1" required placeholder="@SiteResource.Password" class="form-control" type="password" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-lock"></i></span>
+
+                                    <input name="confirm_password" id="password2" required placeholder="@SiteResource.ConfirmPassword" class="form-control" type="password" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-phone"></i></span>
+                                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new {id="phone", @required = "required", @class = "form-control", @placeholder = SiteResource.Phone } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-location2"></i></span>
+                                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @required = "required", @class = "form-control", @placeholder = SiteResource.Country } })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-md btn-info pull-right">@SiteResource.Register</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var phone = document.getElementById("phone");
+        phone.onchange=function()
+        {
+            var p = document.getElementById("phone");
+            if (p.value.length > 11 ||isNaN(p.value))
+            {
+                document.getElementById("phone").setCustomValidity("Phone Must Be < 12 Number & No Chars");
+            } else {
+                document.getElementById("phone").setCustomValidity('');
+            }
+        }
+    </script>
+    <script type="text/javascript">
+		window.onload = function () {
+			document.getElementById("password1").onchange = validatePassword;
+			document.getElementById("password2").onchange = validatePassword;
+		}
+
+		function validatePassword() {
+			var pass2 = document.getElementById("password2").value;
+			var pass1 = document.getElementById("password1").value;
+			if (pass1 != pass2)
+				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+			else
+				document.getElementById("password2").setCustomValidity('');
+			//empty string means no validation error
+		}
+    </script>
+</body>
+</html>

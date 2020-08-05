@@ -1,0 +1,23 @@
+﻿@model RooyaDev.Models.Project
+
+<div id="Link">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Url</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var item in Model.Project_Videos)
+            {
+            <tr>
+                <td>@item.Link</td>
+                <td>
+                    @using (Ajax.BeginForm("DeleteLink", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Links", InsertionMode = InsertionMode.Replace }))
+                    {
+                        <button type="submit"><i class="fa fa-times"></i></button>
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

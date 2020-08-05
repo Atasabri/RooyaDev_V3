@@ -1,0 +1,192 @@
+﻿@model IEnumerable<RooyaDev.Models.Project>
+
+@{
+    ViewBag.Title = "Projects";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-product-hunt"> </i> <label> Projects</label>
+                </div>
+
+            </div>
+        </div>
+
+    </header><!-- /header -->
+    <!-- Header-->
+
+
+    <div class="col-md-12">
+        <button data-toggle="modal" data-target="#modal1" class="btn btn-success"><i class="fa fa-plus-square"></i> &nbsp; ADD</button>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <p></p>
+            </div>
+
+            <!-- Table -->
+            <table class="table table-hover table-bordered">
+                <tr>
+                    <td>Name</td>
+                    <td>Under Work</td>
+                    <td>Finished</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        @if (item.Expire_Date <= DateTime.Now && item.Finished == false)
+                        {
+                            <td class="col-md-2" style="color:red">@item.Name</td>
+                        }
+                        else
+                        {
+                            <td class="col-md-2">@item.Name</td>
+                        }
+
+                            <td class="col-md-2">
+                        @Html.DisplayFor(modelItem => item.UnderWork)
+                        </td>
+
+                        <td class="col-md-2">@Html.DisplayFor(modelItem => item.Finished)</td>
+                        <td class="col-md-2">
+                            <a href="~/Projects/Edit/@item.ID" class="btn btn-info">Edit</a>
+                        </td>
+                        <td class="col-md-2">
+                            <a href="~/Projects/Details/@item.ID" class="btn btn-primary">
+                                Details
+                            </a>
+                        </td>
+                        <td class="col-md-2">
+                        @using (Html.BeginForm("Delete", "Projects", new { id = item.ID }, FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()                          
+                            <button type="submit" onclick="return confirm('Are You Sure You Want Delete This Project ?!');" class="btn btn-danger">Delete</button>
+                        }                        
+                        </td>
+                    </tr>
+
+                }
+            </table>
+        </div>
+    </div><!-- .content -->
+
+</div> <!-- /#right-panel -->
+<!-- Right Panel -->
+
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+            <h3 class="white"><i class="fa fa-plus-square"></i> Add Project</h3> <hr />
+            @using (Ajax.BeginForm("AddTask", "Projects", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }))
+            {
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Task</span>
+                    <input type="text" name="Task" required class="form-control co-md-7">
+
+                    <button type="submit" class="btn btn-success">add</button>
+                </div> <br />
+            }
+
+            <div id="DIV">
+                <table class="table table-info table-hover table-bordered">
+                    <tr>
+                        <td>Task</td>
+                        <td></td>
+                    </tr>
+                    @using RooyaDev.Models
+                    @if (Session["Tasks"] != null)
+                    {
+                        foreach (var item in Session["Tasks"] as List<Task>)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Name
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+            @using (Ajax.BeginForm("AddLink", "Projects", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Links", InsertionMode = InsertionMode.Replace }))
+            {
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Embed Url</span>
+                    <input type="text" name="url" required class="form-control co-md-7">
+
+                    <button type="submit" class="btn btn-success">add</button>
+                </div> <br />
+            }
+
+            <div id="Links">
+                <table class="table table-info table-hover table-bordered">
+                    <tr>
+                        <td>Embed Url</td>
+                        <td></td>
+                    </tr>
+                    @using RooyaDev.Models
+                    @if (Session["Links"] != null)
+                    {
+                        foreach (var item in Session["Links"] as List<Project_Videos>)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Link
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+            </div>
+
+            <form action="~/Projects/Create" method="post" enctype="multipart/form-data">
+                @Html.AntiForgeryToken()
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                    <input type="text" class="form-control co-md-7" name="Name" required>
+                </div> <br />
+
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Description</span>
+                    <textarea class="form-control col-md-8" name="Description" required id="basic-url" aria-describedby="basic-addon3"> </textarea>
+                </div> <br />
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">DeadLine</span>
+                    <input id="Text1" type="date" name="Expire_Date" required class="form-control co-md-7" />
+                </div> <br />
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">User</span>
+                @Html.DropDownList("User_ID", new SelectList(new DB().Users,"ID","Name"),"-Select User-",new {@class= "form-control dropdown col-md-8", required= "required" })
+                </div> <br />
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Under Work</span>
+                    <input id="Checkbox1" name="UnderWork" value="True" type="checkbox" />
+                </div> <br />
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Upload Logo</span>
+                    <input type="file" name="logo" class="col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Upload Photos</span>
+                    <input type="file" name="Photos" class="col-md-8" id="basic-url" aria-describedby="basic-addon3" multiple>
+                </div> <br />
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+﻿@model RooyaDev.Models.Carrer
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+  <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-pencil"> </i> <label> Edit Carrer</label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-pencil"></i> Edit Carrer</h3> <hr />
+
+        @using (Ajax.BeginForm("AddSkill", "Carrers", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }))
+            {
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Skill</span>
+                <input type="text" name="Skill" required class="form-control co-md-7">
+
+                <button type="submit" class="btn btn-success">add</button>
+            </div> <br />
+        }
+
+        <div id="DIV">
+            <table class="table table-info table-hover table-bordered">
+                <tr>
+                    <td>Skill</td>
+                    <td></td>
+                </tr>
+                @using RooyaDev.Models
+                @if (Session["Skills"] != null)
+                {
+                    foreach (var item in Session["Skills"] as List<Skill>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+        @using (Ajax.BeginForm("AddRequirment", "Carrers", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+            {
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Requirment</span>
+                <input type="text" name="Requirment" required class="form-control co-md-7">
+
+                <button type="submit" class="btn btn-success">add</button>
+            </div> <br />
+        }
+
+        <div id="DIV1">
+            <table class="table table-info table-hover table-bordered">
+                <tr>
+                    <td>Requirment</td>
+                    <td></td>
+                </tr>
+                @using RooyaDev.Models
+                @if (Session["Requirment"] != null)
+                {
+                    foreach (var item in Session["Requirment"] as List<Requirment>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+
+
+
+        <form action="~/Carrers/Edit" method="post">
+            @Html.AntiForgeryToken()
+            @Html.Hidden("ID",Model.ID)
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                <input type="text" name="Name" value="@Model.Name" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Salary</span>
+                <input type="text" name="Salary" value="@Model.Salary" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Type</span>
+                <input type="text" name="Type" value="@Model.Type" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Country</span>
+                <input type="text" name="Country" value="@Model.Country" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group textarea">
+                <span class="input-group col-md-4" id="basic-addon3"> Description</span>
+                <textarea class="form-control col-md-8" name="Description" required id="basic-url" aria-describedby="basic-addon3">@Model.Description </textarea>
+            </div> <br />
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <h2>Skills</h2>
+    <div id="DIV3">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Skill</td>
+                <td>Delete</td>
+            </tr>
+            @foreach (var item in Model.Skills)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        @using (Ajax.BeginForm("DeleteSkill", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV3", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <br/><br/>
+    <h2>Requirment</h2>
+    <div id="DIV4">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Requirment</td>
+                <td>Delete</td>
+            </tr>
+            @foreach (var item in Model.Requirments)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        @using (Ajax.BeginForm("DeleteRequirment", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV4", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

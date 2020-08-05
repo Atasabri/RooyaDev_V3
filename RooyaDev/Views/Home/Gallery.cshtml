@@ -1,0 +1,275 @@
+﻿@model IEnumerable<RooyaDev.Models.Gallery>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.Portfolio;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li class="active"><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+
+
+
+
+}
+<style>
+    h3 {
+        color: #0C9CEE;
+    }
+</style>
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet" type='text/css'>
+
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image: url(../../images/portfolio.jpg); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>@SiteResource.Portfolio</h1>
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="fh5co-project">
+    <div class="container">
+        <div class="row">
+            
+            <!-- //agile_inner_banner_info -->
+            <!-- events-top -->
+            <div class="services">
+                <div class="container"> 
+                    <h3 class="text-center">@SiteResource.Portfolio</h3>
+                    <div class="heading-underline">
+                        <div class="h-u1"></div><div class="h-u2"></div><div class="h-u3"></div><div class="clearfix"></div>
+                    </div>
+                    <ul class="portfolio_agile_info_w3ls">
+                        @if (code == "en")
+                        {
+                            foreach (var item in Model)
+                            {
+                                <li>
+                                    <div class="agile_events_top_grid">
+                                        <div class="w3_agileits_evets_text_img">
+                                            <a href="~/Uploads/Gallery/@(item.ID).jpg" class="lsb-preview" data-lsb-group="header">
+                                                <div class="view view-eighth ">
+                                                    <img src="~/Uploads/Gallery/@(item.ID).jpg" alt="" class="img-responsive" />
+
+                                                    <div class="mask">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="agileits_w3layouts_events_text port_info_agile">
+                                            <h3>@item.Name</h3>
+                                            <h6 style="color:white">@item.Description</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <li>
+                                    <div class="agile_events_top_grid">
+                                        <div class="w3_agileits_evets_text_img">
+                                            <a href="~/Uploads/Gallery/@(item.ID).jpg" class="lsb-preview" data-lsb-group="header">
+                                                <div class="view view-eighth ">
+                                                    <img src="~/Uploads/Gallery/@(item.ID).jpg" alt="" class="img-responsive" />
+
+                                                    <div class="mask">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="agileits_w3layouts_events_text port_info_agile">
+                                            <h3>@item.Name_AR</h3>
+                                            <h6 style="color:white">@item.Description_AR</h6>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <h2 class="text-center"> Video </h2>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/za-whrSh4Ms" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/huX-sbE1jAY" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UTGU20AChNk" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/9cp4fFPX7tU" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LFPLWObYUNQ" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!--
+            
+     <iframe width="806" height="453" src="https://www.youtube.com/embed/LFPLWObYUNQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            
+            
+            
+            
+            
+            
+            -->
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<script src="~/Scripts/Script/jquery-2.1.4.min.js"></script>
+<script src="~/Scripts/Script/jquery.chocolat.js"></script>
+
+<script src="~/Scripts/Script/jquery.waypoints.min.js"></script>
+<script src="~/Scripts/Script/main.js"></script>
+<link href="~/Content/chocolat.css" rel="stylesheet" />
+<script type="text/javascript ">
+    $(function () {
+        $('.w3_agileits_evets_text_img a').Chocolat();
+    });
+</script>
+
+<script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+</script>
+

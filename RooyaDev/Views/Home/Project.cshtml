@@ -1,0 +1,356 @@
+﻿@model RooyaDev.Models.Project
+@using RooyaDev.Models
+@using System.IO
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown active">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+
+
+}
+
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet" type='text/css'>
+
+<style>
+    #uo li a {
+        color: black;
+    }
+</style>
+<style>
+    h3 {
+        font-size: 38px;
+    }
+
+    #hh li {
+        font-size: 28px;
+    }
+
+    ul li .icon-check2 {
+        color: green;
+    }
+
+    ul li .icon-cross2 {
+        color: red;
+    }
+
+    ul li span {
+        color: black;
+    }
+</style>
+<link href="~/Content/flipclock.css" rel="stylesheet" />
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['@SiteResource.Finished', @Model.Tasks.Where(x=>x.Finished==true).Count()],
+              ['@SiteResource.UnderWork', @Model.Tasks.Where(x => x.Finished.HasValue == false).Count()]
+            ]);
+            var options = {
+                title: '@SiteResource.Tasks'
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+</script>
+
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image: url(../../Uploads/Project_Logo/@(Model.ID).jpg); ">
+    <div class="overlay"></div>
+</header>
+<div id="fh5co-project">
+    <div class="container">
+        <div class="row">
+            <!-- Column -->
+            <div class="col-lg-9 col-md-9">
+                <div id="piechart" style="width:600px; height:400px;"></div>
+            </div>
+        </div>
+        @if (Model.Expire_Date <= DateTime.Now && Model.Finished == false && !Model.Tasks.All(x => x.Finished == true))
+            {
+            <i class="icon icon-cross2" style="color:red">
+                <span>@SiteResource.ThisProjectIsOutOfDate</span>
+            </i>
+        }
+        else if (Model.Finished == true || Model.Tasks.All(x => x.Finished == true))
+        {
+            <i class="icon icon-check2" style="color:blue">
+                <span>@SiteResource.ThisProjectIsFinished</span>
+            </i>
+        }
+        else
+        {
+            <div class="row text-center">
+                <h2><img src="~/Uploads/Project_Logo/@(Model.ID).jpg" width="50" height="50" style="border-radius:50%" /> @Model.Name</h2>
+                <br />
+                <p><small>@SiteResource.DeadLine</small></p>
+                <br />
+                <div class="clock" style="padding-left:300px;"></div>
+                <div class="message"></div>
+            </div>
+        }
+        <hr class="hr-how" />
+        <div class="row">
+            <div class="services">
+                <div class="container">
+                    <div class="col-md-12 text-center">
+                        <h3>@SiteResource.AboutProject</h3>
+                        <div class="col-md-4"></div>
+                        <p class="col-md-4">
+                            @Model.Description
+                        </p>
+                        <div class="col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="services">
+                <div class="container">
+                    <div id="hh" class="col-md-12 text-center">
+                        <h3>@SiteResource.Tasks</h3>
+                        <ul class="list-group" style="list-style:none;">
+                            @foreach (var item in Model.Tasks.Where(x => x.Finished == true))
+                            {
+                                <li class="item">
+                                    <i class="icon icon-check2">
+                                        <span>@item.Name</span>
+                                    </i>
+                                </li>
+                            }
+
+                            @foreach (var item in Model.Tasks.Where(x => x.Finished.HasValue == false))
+                            {
+                                <li class="item">
+                                    <i class="icon icon-cross2">
+                                        <span>@item.Name</span>
+                                    </i>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fh5co-project">
+            <div class="container">
+        
+               <div class="row">
+                    <!-- //agile_inner_banner_info -->
+                    <!-- events-top -->
+                    <div class="services">
+                        <div class="container">
+                            <ul class="portfolio_agile_info_w3ls">
+                                @foreach (string item in Directory.GetFiles(Server.MapPath("~/Uploads/Projects"),Model.ID+"*"))
+                        {
+                            string name = Path.GetFileName(item);
+                        <li>
+                            <div class="agile_events_top_grid">
+                                <div class="w3_agileits_evets_text_img">
+                                    <a href="~/Uploads/Projects/@name" class="lsb-preview" data-lsb-group="header">
+                                        <div class="view view-eighth ">
+                                            <img src="~/Uploads/Projects/@name" alt="" class="img-responsive" />
+
+                                            <div class="mask">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        }
+                                @foreach (var item in Model.Project_Videos)
+               {
+                        <li>
+                            <div class="agile_events_top_grid">
+                                <div class="w3_agileits_evets_text_img">
+                                    <a href="@item.Link" class="lsb-preview" data-lsb-group="header">
+                                        <div class="view view-eighth">
+                                            <iframe width="420" height="315"
+                                                    src="@item.Link"></iframe>
+                                            <div class="mask">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+               }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+                <br />
+                <div class="row text-center">
+                    <h2>@SiteResource.AddCommentsToAdmin</h2>
+                    <div class="row col-md-12">
+                        <div class="col-md-4"></div>
+                        <div class="col-lg-5">
+                            <div class="input-group">
+                                @using (Ajax.BeginForm("AddComment", "Home", new AjaxOptions { HttpMethod = "Post", InsertionMode = InsertionMode.Replace, UpdateTargetId = "DIV" }))
+                                {
+                                    <input type="text" name="Comment" required class="form-control" placeholder="@SiteResource.Comment">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">@SiteResource.add</button>
+                                    </span>
+                                }
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8" id="DIV">
+                        <table class="table table-hover text-center">
+                            @if (Session["Comments"] != null)
+                            {
+                                foreach (var item in Session["Comments"] as List<Comment>)
+                                {
+                                    <tr>
+                                        <td>@item.Comment1</td>
+                                    </tr>
+                                }
+                            }
+                        </table>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        @using (Html.BeginForm("SendComments", "Home", new { project_id = Model.ID }, FormMethod.Post, null))
+                        {
+                            <button type="submit" class="container btn btn-primary col-md-12 col-sm-12">@SiteResource.Sendtoadmin</button>
+                        }
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Scripts/Script/jquery-2.1.4.min.js"></script>
+        <script src="~/Scripts/Script/jquery.chocolat.js"></script>
+
+        <script src="~/Scripts/Script/jquery.waypoints.min.js"></script>
+        <script src="~/Scripts/Script/main.js"></script>
+        <link href="~/Content/chocolat.css" rel="stylesheet" />
+<script src="~/Scripts/Script/flipclock.js"></script>
+@{ 
+    double seconds = (Model.Expire_Date-DateTime.Now).TotalSeconds;
+}
+<script type="text/javascript">
+        var clock;
+
+        $(document).ready(function () {
+            var clock;
+
+            clock = $('.clock').FlipClock({
+                clockFace: 'DailyCounter',
+                autoStart: false,
+                callbacks: {
+                    stop: function () {
+                        $('.message').html('The clock has stopped!')
+                    }
+                }
+            });
+
+            clock.setTime(@seconds);
+            clock.setCountdown(true);
+            clock.start();
+
+        });
+</script>

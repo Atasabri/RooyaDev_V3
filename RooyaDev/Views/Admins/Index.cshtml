@@ -1,0 +1,167 @@
+﻿@model IEnumerable<RooyaDev.Models.Admin>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = "Admins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int adminID = int.Parse(User.Identity.Name);
+    int type = new DB().Admins.Find(adminID).Type;
+}
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-id-card"> </i> <label> Admins</label>
+                </div>
+
+            </div>
+        </div>
+
+    </header><!-- /header -->
+    <!-- Header-->
+
+
+    <div class="col-md-12">
+        @if (type == 1)
+        {
+            <button data-toggle="modal" data-target="#modal1" class="btn btn-success"><i class="fa fa-plus-square"></i> &nbsp; ADD</button>
+        }
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <p></p>
+            </div>
+            @if (ViewData["error"] != null)
+            {
+                <span style="color:red">@ViewData["error"].ToString()</span>
+            }
+            <!-- Table -->
+            <table class="table table-hover table-bordered">
+
+                @if (type == 1)
+                {
+                    <tr>
+                        <td>Name</td>
+                        <td>Type</td>
+                        <td>Photo</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-3">@item.Name</td>
+                            @if (item.Type == 1)
+                            {
+                                <td class="col-md-3">Manager</td>
+                            }
+                            else
+                            {
+                                <td class="col-md-3">Normal</td>
+                            }
+                            <td class="col-md-3"><img src="~/Uploads/Admins/@(item.ID).jpg" height="60" width="60" style="border-radius:50%" /></td>
+                            <td class="col-md-2">
+                                <a href="~/Admins/Edit/@item.ID" class="btn btn-info">Edit</a>
+                            </td>
+                            <td class="col-md-2">
+                                <a href="~/Admins/Details/@item.ID" class="btn btn-primary">
+                                    Details
+                                </a>
+                            </td>
+
+                            <td class="col-md-2">
+                                @using (Html.BeginForm("Delete", "Admins", new { id = item.ID }, FormMethod.Post, null))
+                                {
+                                    <button type="submit" onclick="return confirm('Are You Want To Delete This Admin ?!');" class="btn btn-danger">Delete</button>
+                                }
+                            </td>
+
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td>Name</td>
+                        <td>Type</td>
+                        <td>Photo</td>
+                    </tr>
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-3">@item.Name</td>
+                            @if (item.Type == 1)
+                            {
+                                <td class="col-md-3">Manager</td>
+                            }
+                            else
+                            {
+                                <td class="col-md-3">Normal</td>
+                            }
+                            <td class="col-md-3"><img src="~/Uploads/Admins/@(item.ID).jpg" height="60" width="60" style="border-radius:50%" /></td>
+
+                        </tr>
+                    }
+                }
+
+
+
+            </table>
+        </div>
+    </div>
+
+</div> <!-- .content -->
+<!-- /#right-panel -->
+<!-- Right Panel -->
+@if (type == 1)
+{
+    <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-popup">
+                <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+                <h3 class="white"><i class="fa fa-plus-square"></i> Add Admin</h3> <hr />
+                <form action="~/Admins/Create" method="post" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    <div class="input-group">
+                        <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                        <input type="text" required class="form-control col-md-8" id="basic-url" name="Name" aria-describedby="basic-addon3">
+                    </div> <br />
+
+                    <div class="input-group">
+                        <span class="input-group col-md-4" id="basic-addon3">User Name</span>
+                        <input type="text" required class="form-control col-md-8" id="basic-url" name="User_Name" aria-describedby="basic-addon3">
+                    </div> <br />
+
+                    <div class="input-group">
+                        <span class="input-group col-md-4" id="basic-addon3">Password</span>
+                        <input type="password" required class="form-control col-md-8" id="basic-url" name="Password" aria-describedby="basic-addon3">
+                    </div> <br />
+
+
+                    <div class="input-group">
+                        <span class="input-group col-md-4" id="basic-addon3">Type</span>
+                        <select class="form-control dropdown col-md-8" required aria-describedby="basic-addon3" name="Type">
+                            <option value="0">Normal</option>
+                            <option value="1">Manager</option>
+                        </select>
+                    </div> <br />
+
+                    <div class="input-group">
+                        <span class="input-group col-md-4" id="basic-addon3">Upload Photo</span>
+                        <input type="file" class="col-md-8" id="basic-url" required name="Photo" aria-describedby="basic-addon3">
+                    </div> <br />
+                    <button type="submit" class="btn btn-success">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+

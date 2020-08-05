@@ -1,0 +1,171 @@
+﻿@model IEnumerable<RooyaDev.Models.Service>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.Services;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown active">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="">@user.Name</a>
+                <ul class="dropdown">
+                    <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                </ul>
+            </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+            <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+    <!-- jQuery -->
+    <script src="~/Scripts/Script/jquery.min.js"></script>
+
+}
+
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image: url(../../images/services.jpg); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>@SiteResource.Services</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="fh5co-about">
+    <div class="container">
+        <div class="about-content">
+            @if (code == "en")
+            {
+                foreach (var item in Model)
+                {
+                    <div class="row animate-box">
+                        <div class="col-md-6 col-md-push-6">
+                            <div class="desc">
+                                <h3>Name</h3>
+                                <p>@item.Name</p>
+                            </div>
+                            <div class="desc">
+                                <h3>Description</h3>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <a href="~/Home/Service/@(item.ID)">
+                                <img class="img-responsive" src="~/Uploads/Services/@(item.ID).jpg" alt="about">
+                            </a>
+                        </div>
+
+                    </div>
+                    <hr />
+                }
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <div class="row animate-box">
+                        <div class="col-md-6 col-md-push-6">
+                            <div class="desc">
+                                <h3>الاسم</h3>
+                                <p>@item.Name_AR</p>
+                            </div>
+                            <div class="desc">
+                                <h3>التفاصيل</h3>
+                                <p>@item.Description_AR</p>
+                            </div>
+                            <div class="row">
+                                <a href="~/Home/ContactUs" class="btn btn-info">اطلب الخدمة</a>
+                                <a href="~/Home/Gallery" class="btn btn-info">شاهد معرض الاعمال</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <a href="~/Home/Service/@(item.ID)">
+                                <img class="img-responsive" src="~/Uploads/Services/@(item.ID).jpg" alt="about">
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                }
+            }
+        </div>
+    </div>
+</div>

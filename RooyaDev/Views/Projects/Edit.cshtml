@@ -1,0 +1,235 @@
+﻿@model RooyaDev.Models.Project
+@using System.IO;
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-pencil"> </i> <label> Edit Project</label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-pencil"></i> Edit Project</h3> <hr />
+       
+        @using (Ajax.BeginForm("AddTask", "Projects", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }))
+            {
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Task</span>
+                <input type="text" name="Task" required class="form-control co-md-7">
+
+                <button type="submit" class="btn btn-success">add</button>
+            </div> <br />
+        }
+
+        <div id="DIV">
+            <table class="table table-info table-hover table-bordered">
+                <tr>
+                    <td>Task</td>
+                    <td></td>
+                </tr>
+                @using RooyaDev.Models
+                @if (Session["Tasks"] != null)
+                {
+                    foreach (var item in Session["Tasks"] as List<Task>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+        @using (Ajax.BeginForm("AddLink", "Projects", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Links", InsertionMode = InsertionMode.Replace }))
+            {
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Embed Url</span>
+                <input type="text" name="url" required class="form-control co-md-7">
+
+                <button type="submit" class="btn btn-success">add</button>
+            </div> <br />
+        }
+
+        <div id="Links">
+            <table class="table table-info table-hover table-bordered">
+                <tr>
+                    <td>Embed Url</td>
+                    <td></td>
+                </tr>
+                @using RooyaDev.Models
+                @if (Session["Links"] != null)
+                {
+                    foreach (var item in Session["Links"] as List<Project_Videos>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Link
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+
+
+
+        
+        
+        
+         <form action="~/Projects/Edit" method="post" enctype="multipart/form-data">
+   
+             @Html.AntiForgeryToken()
+             @Html.Hidden("ID",Model.ID)
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                 <input type="text" value="@Model.Name" class="form-control co-md-7" name="Name" required>
+             </div> <br />
+
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Description</span>
+                 <textarea class="form-control col-md-8" name="Description" required id="basic-url" aria-describedby="basic-addon3"> @Model.Description</textarea>
+             </div> <br />
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">DeadLine</span>
+                 <input id="Text1" value="@Model.Expire_Date" type="text" name="Expire_Date" required class="form-control co-md-7" />
+              </div> <br />
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">User</span>
+                 @Html.DropDownList("User_ID", new SelectList(new DB().Users, "ID", "Name",Model.ID.ToString()), new { @class = "form-control dropdown col-md-8", required = "required" })
+             </div> <br />
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Under Work</span>
+                 @Html.EditorFor(model => model.UnderWork)
+             </div> <br />
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Finish</span>
+                 @Html.EditorFor(model => model.Finished)
+             </div> <br />
+
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Upload Logo</span>
+                 <input type="file" name="logo" class="col-md-8" id="basic-url" aria-describedby="basic-addon3">
+             </div> <br />
+             <div class="input-group">
+                 <span class="input-group col-md-4" id="basic-addon3">Upload Photos</span>
+                 <input type="file" name="Photos" class="col-md-8" id="basic-url" aria-describedby="basic-addon3" multiple>
+             </div> <br />
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <h2>Tasks</h2>
+    <div id="DIV1">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Task</td>
+                <td>Delete</td>
+                <td>Finish</td>
+            </tr>
+            @foreach (var item in Model.Tasks.OrderBy(x=>x.ID))
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>
+                        @using (Ajax.BeginForm("DeleteTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                    <td>
+                        @if (item.Finished.HasValue)
+                        {
+                            if (item.Finished.Value == true)
+                            {
+                                <i class="fa fa-check"></i>
+                            }
+                            else
+                            {
+                                <i class="fa fa-align-center"></i>
+                                using (Ajax.BeginForm("FinishTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                                {
+                                    <button type="submit"><i class="fa fa-check"></i></button>
+                                }
+                            }
+                        }
+                        else
+                        {
+                            <i class="fa fa-align-center"></i>
+                            using (Ajax.BeginForm("FinishTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                            {
+                                <button type="submit"><i class="fa fa-check"></i></button>
+                            }
+
+                         }
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <h2>Links</h2>
+    <div id="Link">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Url</td>
+                <td>Delete</td>
+            </tr>
+            @foreach (var item in Model.Project_Videos)
+            {
+                <tr>
+                    <td>@item.Link</td>
+                    <td>
+                        @using (Ajax.BeginForm("DeleteLink", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "Link", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+    <br/>
+    <h2>Photos</h2>
+    <div id="DIV2">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Photo</td>
+                <td>Delete</td>
+            </tr>
+            @foreach (var item in Directory.GetFiles(Server.MapPath("~/Uploads/Projects"),Model.ID+"*"))
+            {
+                string name = Path.GetFileName(item);
+                <tr>
+                    <td><img src="~/Uploads/Projects/@name" width="100" height="100" alt="" /></td>
+                    <td>
+                        @using (Ajax.BeginForm("DeletePhoto", new { Path = item,id=Model.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV2", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

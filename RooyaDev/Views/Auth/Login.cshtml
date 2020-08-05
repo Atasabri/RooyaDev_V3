@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Login</title>
+    <meta name="description" content="Roaaya Admin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="~/favicon.png">
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link rel="stylesheet" href="~/Content/css/normalize.css">
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/themify-icons.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="~/Content/scss/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+</head>
+<body class="bg-dark">
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="~/Home/Index">
+                        ROOAYA
+                    </a>
+                </div>
+                <div class="login-form">
+                    <form action="~/Auth/Login" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" required name="User_Name" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" required name="Password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
+
+
+                    </form>
+                    @if(ViewBag.error!=null)
+                    {
+                        <span style="color:red">@ViewBag.error</span>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/js/vendor/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/js/popper.min.js"></script>
+    <script src="~/Scripts/js/plugins.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+
+</body>
+</html>
+

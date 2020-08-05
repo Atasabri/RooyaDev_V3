@@ -1,0 +1,222 @@
+﻿@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.Contact;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li class="active"><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+    <!-- jQuery -->
+    <script src="~/Scripts/Script/jquery.min.js"></script>
+
+}
+
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image: url('../../images/contact us.jpg'); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>@SiteResource.Contact</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="fh5co-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <h3>@SiteResource.Location</h3>
+                    <hr />
+                    <img src="~/images/location.png" alt="roaaya team">
+                    <strong class="role"><i class="icon-location-pin"></i> @SiteResource.Location</strong>
+                    <div class="btn-group" role="group" aria-label="..">
+                        <a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1433.5078160481316!2d30.9510288!3d29.961559!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x109e343970d6e4a4!2z2LTYsdmD2Kkg2LHYpNmK2Kcg2KfZhNiq2LfZiNixINmE2YTYqNix2YXYrNmK2KfYqg!5e1!3m2!1sar!2seg!4v1525281341555" target="test" class="btn btn-default">Cairo</a>
+                        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.6405859221595!2d39.15514481494176!3d21.560904585712624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMzJzM5LjMiTiAzOcKwMDknMjYuNCJF!5e0!3m2!1sen!2seg!4v1525281285539" width="600" target="test" class="btn btn-default">KSA</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <h3>@SiteResource.Phone</h3>
+                    <hr />
+                    <img src="~/images/phone.png" alt="roaaya team">
+                    <strong class="role"><i class="icon-mobile"></i> @SiteResource.Phone</strong>
+                    <label class="">Cairo</label><br/>
+                    <label class=""><a href="tel:01000094045">0100092584</a></label>
+                    
+                    <br />
+                    <label class="">KSA</label><br />
+                    <label class=""><a href="tel:0531071434">0531071434</a></label>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+                <div class="fh5co-staff">
+                    <h3>@SiteResource.E_Mail</h3>
+                    <hr />
+                    <img src="~/images/mail.jpg" alt="roaaya team">
+                    <strong class="role"><i class="icon-mail"></i> @SiteResource.Email </strong>
+                    <label class="email"><a href="mailto:info@rooyadev.com">info@rooyadev.com</a></label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid-kamn">
+    <div class="row">
+        <div>
+            <iframe name="test" class="center-block"  height="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.6405859221595!2d39.15514481494176!3d21.560904585712624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDMzJzM5LjMiTiAzOcKwMDknMjYuNCJF!5e0!3m2!1sen!2seg!4v1525281285539" frameborder="1" style="border:0;width:80%" allowfullscreen></iframe>
+            <br />
+
+        </div>
+    </div>
+</div>
+
+<div id="fh5co-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 animate-box">
+                <form action="~/Home/ContactUs" method="post">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="fname">First Name</label> -->
+                            <input type="text" id="fname" required name="Name" class="form-control" placeholder="@SiteResource.Name">
+                        </div>
+
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input type="text" id="email" required name="Email" class="form-control" placeholder="@SiteResource.Email">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="subject">Subject</label> -->
+                            <input type="text" id="subject" required name="Subject" class="form-control" placeholder="@SiteResource.Subject">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="message">Message</label> -->
+                            <textarea name="Message" required id="message" cols="30" rows="10" class="form-control" placeholder="@SiteResource.Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="@SiteResource.SendMessage" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5 col-md-push-1 animate-box">
+                <div class="fh5co-contact-info">
+                    <h3>@SiteResource.ContactInfo</h3>
+                    <ul>
+                        <li class="address">المملكة العربية السعودية - جدة - حي الروضة - شارع سعود الفيصل - مبنى ال طاهر - مكتب 102</li>
+                        <li class="phone"><a href="tel:01000094045">0100092584</a></li>
+                        <li class="phone"><a href="tel:0531071434">0531071434</a></li>
+                        
+                        <li class="email"><a href="mailto:info@rooyadev.com">info@rooyadev.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

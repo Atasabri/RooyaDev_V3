@@ -1,0 +1,54 @@
+﻿@model RooyaDev.Models.Contact
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-pencil"> </i> <label> Edit Contact</label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-pencil"></i> Edit Contact</h3> <hr />
+        <form action="~/Contacts/Edit" method="post">
+            @Html.AntiForgeryToken()
+            @Html.Hidden("ID",Model.ID)
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                <input type="text" name="Name" value="@Model.Name" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3"> Subject</span>
+                <input type="text" name="Subject" value="@Model.Subject" required  class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3"> Email</span>
+                <input type="email" name="Email" value="@Model.Email" required  class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group textarea">
+                <span class="input-group col-md-4" id="basic-addon3"> Message</span>
+                <textarea class="form-control col-md-8" id="basic-url" name="Message" required aria-describedby="basic-addon3"> @Model.Message</textarea>
+            </div> <br />
+
+            <button type="submit" class="btn btn-success">save</button>
+        </form>
+    </div>
+</div>

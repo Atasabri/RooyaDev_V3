@@ -1,0 +1,22 @@
+﻿<div id="DIV">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Task</td>
+            <td></td>
+        </tr>
+        @using RooyaDev.Models
+        @if (Session["Tasks"] != null)
+        {
+            foreach (var item in Session["Tasks"] as List<Task>)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+
+

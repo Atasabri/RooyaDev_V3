@@ -1,0 +1,22 @@
+﻿@model RooyaDev.Models.Pricing
+@if (Session["Login"] != null)
+{
+    <li>
+        @if (Session[Model.ID.ToString()] == null)
+        {
+            using (Ajax.BeginForm("Order", "Home", new { price_id = Model.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }, null))
+            {
+                <button class="btn btn-xl btn-default" type="submit"><i class="icon-shopping-cart"></i>  </button>
+            }
+        }
+        else
+        {
+            <span>@SiteResource.YouOrderThisPrice</span>
+        }
+
+    </li>
+}
+else
+{
+    <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+}

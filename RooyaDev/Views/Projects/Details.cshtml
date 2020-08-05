@@ -1,0 +1,132 @@
+﻿@model RooyaDev.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using System.IO
+  <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-laptop"> </i> <label> Project Details </label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-laptop"></i> Project Details </h3> <hr />
+        <table class="table table-bordered table-hover white">
+            <tr class="alert">
+                <td class="col-md-6">Logo</td>
+                <td class="col-md-6"><img src="~/Uploads/Project_Logo/@(Model.ID).jpg" alt="" /></td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Name</td>
+                <td class="col-md-6">@Model.Name</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Tasks</td>
+                <td class="col-md-6">
+                    <ol class="list-group list-group-item list-group-item-info">
+                        @foreach (var item in Model.Tasks)
+                        {
+                            <li>@item.Name
+
+                            @if(item.Finished.HasValue)
+                            {
+                                if(item.Finished.Value==true)
+                                {
+                                    <i class="fa fa-check"></i>
+                                }
+                                else
+                                {
+                                   <i class="fa fa-align-center"></i> 
+                                }
+                            }
+                            else
+                            {
+                               <i class="fa fa-align-center"></i> 
+                            }
+                        </li>
+                        }
+                    </ol>
+                </td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Links</td>
+                <td class="col-md-6">
+                    <ol class="list-group list-group-item list-group-item-info">
+                        @foreach (var item in Model.Project_Videos)
+                        {
+                            <li>@item.Link</li>
+                        }
+                    </ol>
+                </td>
+            </tr>
+
+            <tr class="alert">
+                <td class="col-md-6">DeadLine</td>
+                <td class="col-md-6">@Model.Expire_Date</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Under Word</td>
+                <td class="col-md-6">@Html.DisplayFor(model=>model.UnderWork)</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Finished</td>
+                <td class="col-md-6">@Html.DisplayFor(model => model.Finished)</td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Comments</td>
+                <td class="col-md-6">
+                    <ol class="list-group list-group-item list-group-item-info">
+                        @foreach (var item in Model.Comments)
+                        {
+                            <li>@item.Comment1</li>
+                        }
+                    </ol>
+                </td>
+            </tr>
+            <tr class="alert">
+                <td class="col-md-6">Photos</td>
+                <td class="col-md-6">
+                    <ol class="list-group list-group-item list-group-item-info">
+                        @foreach (var item in Directory.GetFiles(Server.MapPath("~/Uploads/Projects"), Model.ID + "*"))
+                        {
+                            string name = Path.GetFileName(item);
+                            <li><img src="~/Uploads/Projects/@name" alt="" width="200" height="200" /></li>
+                        }
+                    </ol>
+                </td>
+            </tr>
+            @{ 
+                FileInfo F = new FileInfo(Server.MapPath("~/Uploads/Project_File/" + Model.ID + ".pdf"));
+            }
+                @if (F.Exists)
+                {
+                    <tr class="alert">
+                        <td class="col-md-6">Project File</td>
+                        <td class="col-md-6">
+                            @using (Html.BeginForm("Download", "Projects", new { path = Server.MapPath("~/Uploads/Project_File/" + Model.ID + ".pdf"),name = Model.Name }, FormMethod.Post, null))
+                            {
+                                <input id="Submit1" type="submit" value="Download" class="btn-primary" />
+                            }
+                        </td>
+                    </tr>
+                }
+
+        </table>
+        <a href="~/Projects/Edit/@Model.ID" class="btn btn-info">edit</a>
+
+    </div>
+</div>

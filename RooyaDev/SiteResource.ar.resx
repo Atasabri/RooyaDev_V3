@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>عن الشركة</value>
+  </data>
+  <data name="Cairo" xml:space="preserve">
+    <value>القاهرة</value>
+  </data>
+  <data name="Carrers" xml:space="preserve">
+    <value>الوظائف</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="ContactInfo" xml:space="preserve">
+    <value>معلومات الاتصال</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="EmailUsed" xml:space="preserve">
+    <value>البريد الالكتروني مستخدم بالفعل</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value>لنبدأ</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>بريد الكتروني وكلمة مرور خطأ</value>
+  </data>
+  <data name="KSA" xml:space="preserve">
+    <value>السعودية</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="MobileDevelopment" xml:space="preserve">
+    <value>تطوير تطبيقات الهاتف</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>الهاتف</value>
+  </data>
+  <data name="Portfolio" xml:space="preserve">
+    <value>الانجازات</value>
+  </data>
+  <data name="Pricing" xml:space="preserve">
+    <value>العروض</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>المشاريع</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>انشاء حساب</value>
+  </data>
+  <data name="RooayaDevelopment" xml:space="preserve">
+    <value>رؤيا التطور</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>الخدمات</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="startyourwork" xml:space="preserve">
+    <value>ابدأ عملك الان</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>اشترك</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="WebDevelopment" xml:space="preserve">
+    <value>تطوير المواقع</value>
+  </data>
+  <data name="YourGateway" xml:space="preserve">
+    <value>بوابتك لعالم التكنولوجيا</value>
+  </data>
+  <data name="EnterYourEmail" xml:space="preserve">
+    <value>ادخل البريد الالكتروني</value>
+  </data>
+  <data name="E_Mail" xml:space="preserve">
+    <value>البريد</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ارسل </value>
+  </data>
+  <data name="YouOrderThisPrice" xml:space="preserve">
+    <value>لقد طلبت هذا السعر</value>
+  </data>
+  <data name="OrderYourPrice" xml:space="preserve">
+    <value>اطلب الان</value>
+  </data>
+  <data name="enterpdffile" xml:space="preserve">
+    <value>ادخل ملف من نوع (.pdf)</value>
+  </data>
+  <data name="OrderDone" xml:space="preserve">
+    <value>تم طلب المشروع بنجاح .. يرجي انتظار الرد </value>
+  </data>
+  <data name="DeadLine" xml:space="preserve">
+    <value>تاريخ التسليم</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>اطلب</value>
+  </data>
+  <data name="OrderCustomProject" xml:space="preserve">
+    <value>اطلب مشروعك الان</value>
+  </data>
+  <data name="ProjectDesc" xml:space="preserve">
+    <value>تفاصيل المشروع</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>اسم المشروع</value>
+  </data>
+  <data name="Uploadapdffile" xml:space="preserve">
+    <value>ارفع ملف من نوع (PDF)</value>
+  </data>
+  <data name="DeadLineError" xml:space="preserve">
+    <value>من فضلك حدد تاريخ صحيح</value>
+  </data>
+  <data name="AboutJob" xml:space="preserve">
+    <value>عن الوظيفة</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>تقدم للوظيفة</value>
+  </data>
+  <data name="ApplyInthisjob" xml:space="preserve">
+    <value>تقدم لهذه الوظيفة </value>
+  </data>
+  <data name="JobType" xml:space="preserve">
+    <value>نوع العمل</value>
+  </data>
+  <data name="NoCarrers" xml:space="preserve">
+    <value>لا يوجد وظائف</value>
+  </data>
+  <data name="Salary" xml:space="preserve">
+    <value>المرتب</value>
+  </data>
+  <data name="UploadCV" xml:space="preserve">
+    <value>ارفع السيرة الذاتية الخاصة بك (PDF)</value>
+  </data>
+  <data name="JobDone" xml:space="preserve">
+    <value>لقد تم التقديم في هذه الوظيفة بنجاح</value>
+  </data>
+  <data name="AboutProject" xml:space="preserve">
+    <value>تفاصيل المشروع</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>اضافة</value>
+  </data>
+  <data name="AddCommentsToAdmin" xml:space="preserve">
+    <value>اضف تعليقات لفريق العمل</value>
+  </data>
+  <data name="Sendtoadmin" xml:space="preserve">
+    <value>ارسل التعليقات لفريق العمل</value>
+  </data>
+  <data name="Tasks" xml:space="preserve">
+    <value>المهام</value>
+  </data>
+  <data name="Comment" xml:space="preserve">
+    <value>تعليق</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>انتهت</value>
+  </data>
+  <data name="ThisProjectIsFinished" xml:space="preserve">
+    <value>لقد تم الانتهاء من هذا المشروع </value>
+  </data>
+  <data name="ThisProjectIsOutOfDate" xml:space="preserve">
+    <value>هذا المشروع خارج عن الوقت المحدد</value>
+  </data>
+  <data name="UnderWork" xml:space="preserve">
+    <value>تحت العمل</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>فريق العمل</value>
+  </data>
+  <data name="WebDevDesc" xml:space="preserve">
+    <value>خدمات تصميم متنوعة , تناسب كل الاحتياجات
+الإنتشار .. يعني التميز من الاسباب الهامة لإنتشار موقعك بين مستخدمي الإنترنت التصميم المميز والجذاب، يسعدنا في شركة رؤيا التطور للاتصالات وتقنية المعلومات  تصميم موقعك بكل احترافية وفق أعلى المعايير العالمية وبإسلوب منظم للمحتوى تفضل باختيارك إحدى الباقات المتميزة و دعنا ننطلق بموقعك لسماء الإبداع .</value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>تاريخ الشركة</value>
+  </data>
+  <data name="HistoryDesc" xml:space="preserve">
+    <value>تأسست شركة رؤيا التطور عام 2013، لتلبى الاحتياجات المتنامية فى مجال التقنية فى المملكة العربية السعودية و مصر و العالم العربى بأسره، و ذلك عبر تقديم خدمات عالية الكفاءة و المصداقية فى مختلف فروع تقنية المعلومات.
+و لقد نشأت فكرة الشركة نتيجة لمتابعتنا المستمرة لواقع السوق السعودى و المصرى و العربى بشكل عام، و تطوره المستمر و المتزامن مع ما نحن فيه من ثورة معلوماتية و تقنية، و تشعب فى مجالات العمل، و تنوع فى احتياجات المؤسسات المختلفة؛ لتوفير معظم الانظمه والتقنيات الحديثه  – إن لم يكن كل – ما تحتاجه المؤسسات الحديثة فى عملها من تقنية.</value>
+  </data>
+  <data name="HomeDesc" xml:space="preserve">
+    <value>تميزنا مــــن خــلال سنــــوات الخبرة بتقــــــديم باقــات متكاملــــة من منتجــات و حلول و خدمات تقنيــة المعلومــات والاتصــــالات المتنوعــــة لنسطــــر بذلك نجاحات متوالــــية قائمة على سياستنا الرامية إلى خلق و إيجاد خدمات نوعية متميزة تلبــــي تطلعــــات عملائـــــــنا من كافــــة القطاعات المختــلفة بدأ بالأفراد والشركات بمختــلف أحجامها وانتهاءً بالقطاعات والمنظمات الحكوميـــــة. محققين بذلك اهدافــنا وطموحاتـــنا نحو وضع اسمنا ضمــن أكبــر الشركــات العاملــة في قطــاع تقنيــــة المعلومات بالمملكــة.إن دراستنا للسوق المحلي المزدهر التــــى استمرت قرابة سنتيـن قبــــل اطلاق أعمـال الشركـة ساهمت بشكل مباشر وفعّال في تحقيق أهدافنا الرئيسية بخــلق شركة سعودية عالميه  جديدة تنافـس العديد مــن الشركاــت القائــمة، تعمــل علــى تقديم حلول وخدمات الحاسب الآلي والشبــــكات السلكيــــة واللاسلكية وأنظمة التحكم الذكية وأعمال الصيانة والدعم الفني وتطوير الأنظمة والبرمجــيــــات وكــــذلك البيــع المباشر وخدمات ما بعد البيع، ومن أهم اسباب النجــاحات التـــى حققنــــاها ونحققها حالــــياً طــــاقم العمل المتميز الذي نملكه. والشراكات العديدة التي بنيناها مع العديد من الشركات العالمية، وكذلك البحث المستمر عن أسماء لامعة للتعأون معهم.</value>
+  </data>
+  <data name="HomeDescFotter" xml:space="preserve">
+    <value>رؤيا التطور للاتصالات وتقنيه المعلومات  شركة سعودية عالميه  تقدم تصميم مواقع الإنترنت ,تطبيقات الأجهزة الذكية  ,التسويق الالكتروني  , الانتاج الفني بشكل احترافي وتقني ساعد في  نجاح كثير من الشركات في الاسواق العربية.</value>
+  </data>
+  <data name="HomeHead" xml:space="preserve">
+    <value>خدماتنا</value>
+  </data>
+  <data name="MobileDevDesc" xml:space="preserve">
+    <value>صممنا مئات من تطبيقات الجوال الإحترافية بأكثر من لغة ولعملاءنا المنتشرين فى دول العالم المختلفة , حيث ساهمنا في  العديد من المشروعات الكبرى المعتمدة على تطبيقات وأنظمة الجوال , ونسعى لتغيير واقع تطبيقات الجوال فى العالم العربي وجعلها بالفعل سهلة ومتاحة للجميع باذن الله تعالي .</value>
+  </data>
+  <data name="PricingDesc" xml:space="preserve">
+    <value>قدرتنا على التنفيذ تفوق الخيال ويبقى مطلوب العميل هو الأساس لنقوم نحن بدلاً منه بالتخيل و الإبداع و التنفيذ .. و التزامنا بكل ما يحقق أهدافه في عمله المنشود . مجرد خطوات بسيطة، واعمالك  ستكون جاهزه للاستخدام وانت في مكانك بضغطه واحده . هذه هي بعض الأسباب التي تجعلنا خيارك الأول دائما</value>
+  </data>
+  <data name="TrainigDesc" xml:space="preserve">
+    <value>نقدم لك من خلال شركتنا مجموعة متكاملة من الحلول سواءً استشارات تقنية المعلومات أو استشارات الشبكات و استشارات حالات الطوارئ والتي قد تطرأ في أي وقت، ومع تقديم خدمات عديدة تغطى العديد من النواحي الهامة .</value>
+  </data>
+  <data name="WhyDesc" xml:space="preserve">
+    <value>رؤيا التطور  تجمع بين الثقة و الأداء العالي وسهولة الاستخدام و الدعم الفني الذي هدفه تلبية رغباتك في أسرع وقت ممكن,كما نقدم لك كل ما  تحتاجه من انظمه تقنيه متطوره  تسهل اعمالك  كل هذا , بمجرد خطوات بسيطة  وضغطه واحده وانتا في  موقعك  نكون بين يديك.
+الثقة و الأمان
+إن عملنا مبني على الثقة بيننا وبينك. وما لم نكن ملتزمين قانونا بالإفصاح، فإننا ملتزمين بالحماية والحفاظ على سرية أي معلومات متعلقة بك. وسنسعى جاهدين في جميع الأوقات لضمان سرية هذه المعلومات وحمايتها سواء كانت مقدمة لنا من خلال أحد فروعنا أو على الهاتف أو من خلال الموقع الإلكتروني او من خلال اي وسائل التواصل .ونعدك بانك في امان طوال الوقت .
+رضا العملاء هو هدفنا الأول
+في شركة رؤيا التطور عملنا لا ينتهي حتى نتأكد من رضاك عن خدماتنا التي سنقدمها لك فسواء كان احتياجك موقعاً من صفحة واحدة ، أو سلسلة من المواقع ذات صفحات متعددة او تطبيق للجوال ، او هيكل تسويقي لشركتك  , فنحن نضمن لك الجودة العالية و الخدمة الموثوقة و بأسعار مناسبة ونقدم لك خدمة الدعم الفني على مدار الساعة وفي كافة أيام الأسبوع ، كل ذلك لكي تحصل على خدمات استضافة موثوقة وعالية الأداء وانتا في مكانك بلمسه زر واحده .
+ماذا عن رؤية ورسالة الشركة !
+نرى أن قدراتنا و كفاءتنا الأساسية تكمن في مقدرتنا على فهم متغيرات السوق ، والتكيف مع التحديات التي تتمثل في التغيرات السريعة التي تشهدها صناعة تقنية المعلومات ومواجهتها عبر توظيف أفضل للموارد وتدريب متواصل لكوادرنا مما أسهم في حصولنا على العديد من المشاريع</value>
+  </data>
+  <data name="WhyRooya" xml:space="preserve">
+    <value>لماذا تختار رؤية للتطور</value>
+  </data>
+  <data name="LearnMore" xml:space="preserve">
+    <value>المزيد</value>
+  </data>
+  <data name="Trainig" xml:space="preserve">
+    <value>الدورات التدريبيه  والاستشارات التقنيه</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>اغلاق</value>
+  </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>المزيد</value>
+  </data>
+  <data name="AboutService" xml:space="preserve">
+    <value>تفاصيل الخدمة</value>
+  </data>
+  <data name="DesignGames" xml:space="preserve">
+    <value>تصميم الالعاب</value>
+  </data>
+  <data name="DesignGamesDesc" xml:space="preserve">
+    <value>لانتاج العاب ذات محتوى شيق وجيد ومتدرج فى المستويات ومدعوم بحوافز ومهمات . تقطع اى طريق للملل وتزيد من جذب انتباه المستخدم لها كما تقدم خدمه صناعه الالعاب للغير وذلك بتحويل الافكار الي العاب حقيقه بضغطه واحده وبجوده عاليه لكى نحقق للعميل كل ما يهدف اليه من الحصول على انتاج لعبة مميزة ذات شكل واسلوب مختلف عن المتواجد على الساحة .</value>
+  </data>
+  <data name="TechnicalProduction" xml:space="preserve">
+    <value>الإنتاج الفني</value>
+  </data>
+  <data name="TechnicalProductionDes" xml:space="preserve">
+    <value>تقوم شركة رؤيا التطور بإنتاج الأعمال التلفزيونية والإذاعية و تنفيذ الإعلانات التجارية والأفلام الوثائقية لقطاعات الدولة ومؤسسات القطاع الخاص.حيث تتضمن خدماتنا في هذا القسم كافة مراحل الإنتاج و متطلباته مثل كتابة السيناريو والتصوير والمونتاج وأعمال الجرافيك و مزج الصوت و المؤثرات المرئية والصوتية.</value>
+  </data>
+  <data name="Blog" xml:space="preserve">
+    <value>مدونتنا</value>
+  </data>
+  <data name="Whow" xml:space="preserve">
+    <value>من نحن</value>
+  </data>
+  <data name="WhowDesc" xml:space="preserve">
+    <value>مؤسسة رؤيه لتقنية المعلومات و الإنتاج الفني.
+هي مؤسسه مصريه رسميه (مُسجل من الهيئات الرقابيه السعوديه المصريه) متخصصه في تصميم وتطوير الانظمه والمواقع الألكترونيه وتطبيقات الأجهزه الذكيه</value>
+  </data>
+</root>

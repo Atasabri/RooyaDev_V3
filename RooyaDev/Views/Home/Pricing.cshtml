@@ -1,0 +1,290 @@
+﻿@model IEnumerable<RooyaDev.Models.Pricing>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.Pricing;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+@section Head{
+
+<div class="col-xs-10 text-@aa menu-1">
+    <ul>
+        <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+        <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+        <li class="has-dropdown">
+            <a href="~/Home/Services">@SiteResource.Services</a>
+            <ul class="dropdown">
+                @if (code == "en")
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                    }
+                }
+                else
+                {
+                    foreach (var item in new DB().Services.ToList())
+                    {
+                        <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                    }
+                }
+
+
+            </ul>
+        </li>
+        <li class=""><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+        <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+        <li class="active"><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+        <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+
+
+
+        @if (Session["Login"] != null)
+        {
+            int ID = (int)Session["Login"];
+            User user = new DB().Users.Find(ID);
+            <li class="has-dropdown">
+                <a href="">@SiteResource.Projects</a>
+                <ul class="dropdown">
+                    @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                    {
+                        <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+        }
+        else
+        {
+
+            <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+        }
+        @if (code == "en")
+        {
+            <li>
+                <a href="~/Home/Language?Code=ar">AR</a>
+            </li>
+        }
+        else
+        {
+            <li>
+                <a href="~/Home/Language?Code=en">EN</a>
+            </li>
+        }
+    </ul>
+</div>
+    <!-- jQuery -->
+    <script src="~/Scripts/Script/jquery.min.js"></script>
+
+}
+
+<style>
+    .fh5co-staff img {
+        width: 300px;
+        margin-bottom: 0px;
+        -webkit-border-radius: 0%;
+        -moz-border-radius: 0%;
+        -ms-border-radius: 0%;
+        border-radius: 0%;
+    }
+
+    .panel-heading {
+        text-align: center;
+    }
+</style>
+
+
+
+<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image: url(../../images/pricing.jpg); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>@SiteResource.Pricing</h1>
+                        <h2></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="fh5co-about">
+    <div class="container">
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>@SiteResource.OrderYourPrice</h2>
+            </div>
+        </div>
+        <div class="row">
+            @if (code == "en")
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-4 animate-box " data-animate-effect="fadeIn">
+                        <div class="panel panel-primary fh5co-staff">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                @item.Name
+                            </div>
+                            <div class="panel-body">
+                                <img src="~/Uploads/Pricing/@(item.ID).jpg" />
+                            </div>
+                            <ul class="fh5co-social-icons" id="DIV">                                                         
+                                     @if (Session["Login"] != null)
+                                     {
+                                        <li>
+                                            @if (Session[item.ID.ToString()] == null)
+                                            {
+                                                using (Ajax.BeginForm("Order", "Home",new { price_id = item.ID }, new AjaxOptions{HttpMethod="Post",UpdateTargetId="DIV",InsertionMode=InsertionMode.Replace }, null))
+                                                {
+                                                    <button class="btn btn-xl btn-default" type="submit"><i class="icon-shopping-cart"></i>  </button>
+                                                }
+                                            }
+                                            else
+                                            {
+                                               <span>You Order This Price</span>  
+                                            }
+
+                                         </li>
+                                     }
+                                     else
+                                     {
+                                        <li class="btn-cta"><a href="~/Home/Login" style="color:white" class="btn btn-md btn-danger pull-right">@SiteResource.Login</a></li>
+                                     }
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+            }
+            else
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-md-4 col-sm-4 animate-box " data-animate-effect="fadeIn">
+                        <div class="panel panel-primary fh5co-staff">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">
+                                @item.Name_AR
+                            </div>
+                            <div class="panel-body">
+                                <img src="~/Uploads/Pricing/@(item.ID).jpg" />
+                            </div>
+                            <ul class="fh5co-social-icons" id="DIV">
+                                @if (Session["Login"] != null)
+                                {
+                                    <li>
+                                        @if (Session[item.ID.ToString()] == null)
+                                        {
+                                            using (Ajax.BeginForm("Order", "Home", new { price_id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }, null))
+                                            {
+                                                <button class="btn btn-xl btn-default" type="submit"><i class="icon-shopping-cart"></i>  </button>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span>@SiteResource.YouOrderThisPrice</span>
+                                        }
+
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="btn-cta"><a href="~/Home/Login" style="color:white" class="btn btn-md btn-danger pull-right">@SiteResource.Login</a></li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                }
+            }
+
+         </div>
+        <hr class="linea-aerrow" />
+
+        <br />
+        <div class="row">
+            <div class="col-md-12 animate-box menu-1 text-center">
+                <h3>@SiteResource.OrderCustomProject</h3>
+                @if (Session["Login"] == null)
+                {
+                    <div class="row">
+                        <div class="col-md-7 menu-1 text-center">
+                            <a href="~/Home/Login" class="btn btn-md btn-danger pull-right">@SiteResource.Login</a>
+                            <a href="~/Home/Register" class="btn btn-md btn-danger pull-right">@SiteResource.Register</a>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <form action="~/Home/Pricing" method="post" enctype="multipart/form-data">
+                       @if (ViewBag.error != null)
+                       {
+                        <div class="alert alert-danger" role="alert">
+                            <span class="" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                           @ViewBag.error
+                        </div>
+                       }
+
+                        @if (ViewBag.Done != null)
+                        {
+                            <div class="alert alert-success" role="alert">
+                                <span class="" aria-hidden="true"></span>
+                                <span class="sr-only">Done:</span>
+                                @ViewBag.Done
+                            </div>
+                        }
+
+
+
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="text" id="name" required name="Name" class="form-control" placeholder="@SiteResource.ProjectName">
+                            </div>
+
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <textarea id="email" required name="Description" class="form-control" placeholder="@SiteResource.ProjectDesc"></textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <input type="date" id="date" name="DeadLine" required class="form-control" placeholder="@SiteResource.DeadLine MM/DD/yyyy">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="upload-btn-wrapper">
+                                <button class="btn"><i class="icon-paper"></i> @SiteResource.Uploadapdffile</button>
+                                <input type="file" name="myfile" />
+                            </div>
+                        </div>                            <div class="form-group">
+                            <input type="submit" value="@SiteResource.Order" class="btn btn-primary">
+                        </div>
+                    </form>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿@model RooyaDev.Models.Service
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-pencil"> </i> <label> Edit services</label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-pencil"></i> Edit services</h3> <hr />
+        
+        @using (Ajax.BeginForm("AddHead", "Services", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }))
+            {
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Head</span>
+                <input type="text" name="Head" required class="form-control co-md-8">
+        </div>
+        <div class="input-group">
+
+            <span class="input-group col-md-4" id="basic-addon3">Head AR</span>
+            <input type="text" name="Head_AR" required class="form-control co-md-8">
+        </div>
+            <button type="submit" class="btn btn-success">add</button>
+        <br />
+        }
+
+        <div id="DIV">
+            <table class="table table-info table-hover table-bordered">
+                <tr>
+                    <td>Head</td>
+                    <td>Head AR</td>
+                </tr>
+                @using RooyaDev.Models
+                @if (Session["Heads"] != null)
+                {
+                    foreach (var item in Session["Heads"] as List<Head>)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Name_AR
+                            </td>
+                        </tr>
+                    }
+                }
+            </table>
+        </div>
+
+        <form action="~/Services/Edit" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            @Html.Hidden("ID",Model.ID)
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                <input type="text" value="@Model.Name" name="Name" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Name AR</span>
+                <input type="text" value="@Model.Name_AR" name="Name_AR" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group textarea">
+                <span class="input-group col-md-4" id="basic-addon3"> Description</span>
+                <textarea name="Description" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">@Model.Description </textarea>
+            </div> <br />
+            <div class="input-group textarea">
+                <span class="input-group col-md-4" id="basic-addon3"> Description AR</span>
+                <textarea name="Description_AR" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">@Model.Description_AR </textarea>
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Upload Photo</span>
+                <input type="file" name="Photo" class="col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <button type="submit" class="btn btn-success">save</button>
+        </form>
+    </div>
+    <h2>Heads</h2>
+    <div id="DIV1">
+        <table class="table table-info table-hover table-bordered">
+            <tr>
+                <td>Head</td>
+                <td>Head AR</td>
+                <td>Delete</td>
+            </tr>
+            @foreach (var item in Model.Heads)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Name_AR</td>
+                    <td>
+                        @using (Ajax.BeginForm("DeleteHead", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-times"></i></button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

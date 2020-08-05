@@ -1,0 +1,23 @@
+﻿@model RooyaDev.Models.Carrer
+<div id="DIV4">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Requirment</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var item in Model.Requirments)
+            {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @using (Ajax.BeginForm("DeleteRequirment", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV4", InsertionMode = InsertionMode.Replace }))
+                    {
+                        <button type="submit"><i class="fa fa-times"></i></button>
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

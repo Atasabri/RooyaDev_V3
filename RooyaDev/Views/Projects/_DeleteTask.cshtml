@@ -1,0 +1,50 @@
+﻿@model RooyaDev.Models.Project
+<div id="DIV1">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Task</td>
+            <td>Delete</td>
+            <td>Finish</td>
+        </tr>
+        @foreach (var item in Model.Tasks.OrderBy(x => x.ID))
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>
+                    @using (Ajax.BeginForm("DeleteTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                    {
+                        <button type="submit"><i class="fa fa-times"></i></button>
+                    }
+                </td>
+                <td>
+                    @if (item.Finished.HasValue)
+                    {
+                        if (item.Finished.Value == true)
+                        {
+                            <i class="fa fa-check"></i>
+                        }
+                        else
+                        {
+                            <i class="fa fa-align-center"></i>
+                            using (Ajax.BeginForm("FinishTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                            {
+                                <button type="submit"><i class="fa fa-check"></i></button>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <i class="fa fa-align-center"></i>
+                        using (Ajax.BeginForm("FinishTask", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV1", InsertionMode = InsertionMode.Replace }))
+                        {
+                            <button type="submit"><i class="fa fa-check"></i></button>
+                        }
+
+                    }
+                </td>
+                <td></td>
+            </tr>
+        }
+
+    </table>
+</div>

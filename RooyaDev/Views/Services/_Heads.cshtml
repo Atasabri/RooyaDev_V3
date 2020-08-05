@@ -1,0 +1,21 @@
+﻿<div id="DIV">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Head</td>
+            <td>Head AR</td>
+        </tr>
+        @using RooyaDev.Models
+        @foreach (var item in Session["Heads"] as List<Head>)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Name_AR
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

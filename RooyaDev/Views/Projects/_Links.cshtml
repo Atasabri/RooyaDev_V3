@@ -1,0 +1,21 @@
+﻿<div id="Links">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Embed Url</td>
+            <td></td>
+        </tr>
+        @using RooyaDev.Models
+        @if (Session["Links"] != null)
+        {
+            foreach (var item in Session["Links"] as List<Project_Videos>)
+            {
+                <tr>
+                    <td>
+                        @item.Link
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+

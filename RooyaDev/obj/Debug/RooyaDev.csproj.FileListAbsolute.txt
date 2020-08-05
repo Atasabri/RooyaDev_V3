@@ -1,0 +1,470 @@
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\ApplicationInsights.config
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\RooyaDev.dll.config
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\RooyaDev.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\RooyaDev.pdb
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Antlr3.Runtime.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\EntityFramework.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Newtonsoft.Json.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Helpers.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Mvc.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Optimization.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Razor.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\WebGrease.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\EntityFramework.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Helpers.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Mvc.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Optimization.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Razor.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Antlr3.Runtime.pdb
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Newtonsoft.Json.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.pdb
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\ar\RooyaDev.resources.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.Cache
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Abstractions.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\System.Web.Routing.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\csc.exe
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\csc.exe.config
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\csc.rsp
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\csi.exe
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\csi.rsp
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.AppContext.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\vbc.exe
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\vbc.exe.config
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\vbc.rsp
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Asp.net MVC\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Asp.net MVC\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csprojResolveAssemblyReference.cache
+K:\RooyaDev\RooyaDev\bin\ApplicationInsights.config
+K:\RooyaDev\RooyaDev\bin\RooyaDev.dll.config
+K:\RooyaDev\RooyaDev\bin\RooyaDev.dll
+K:\RooyaDev\RooyaDev\bin\RooyaDev.pdb
+K:\RooyaDev\RooyaDev\bin\ar\RooyaDev.resources.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\csc.exe
+K:\RooyaDev\RooyaDev\bin\roslyn\csc.exe.config
+K:\RooyaDev\RooyaDev\bin\roslyn\csc.rsp
+K:\RooyaDev\RooyaDev\bin\roslyn\csi.exe
+K:\RooyaDev\RooyaDev\bin\roslyn\csi.rsp
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+K:\RooyaDev\RooyaDev\bin\roslyn\System.AppContext.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+K:\RooyaDev\RooyaDev\bin\roslyn\vbc.exe
+K:\RooyaDev\RooyaDev\bin\roslyn\vbc.exe.config
+K:\RooyaDev\RooyaDev\bin\roslyn\vbc.rsp
+K:\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe
+K:\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+K:\RooyaDev\RooyaDev\bin\Antlr3.Runtime.dll
+K:\RooyaDev\RooyaDev\bin\EntityFramework.dll
+K:\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+K:\RooyaDev\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+K:\RooyaDev\RooyaDev\bin\Newtonsoft.Json.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Abstractions.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Helpers.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Mvc.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Optimization.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Razor.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.Routing.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.dll
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.dll
+K:\RooyaDev\RooyaDev\bin\WebGrease.dll
+K:\RooyaDev\RooyaDev\bin\EntityFramework.xml
+K:\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+K:\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.Helpers.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.Mvc.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.Optimization.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.Razor.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+K:\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.xml
+K:\RooyaDev\RooyaDev\bin\Antlr3.Runtime.pdb
+K:\RooyaDev\RooyaDev\bin\Newtonsoft.Json.xml
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.Cache
+K:\RooyaDev\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.dll
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.pdb
+K:\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csprojResolveAssemblyReference.cache
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\ApplicationInsights.config
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\RooyaDev.dll.config
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\RooyaDev.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\RooyaDev.pdb
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\ar\RooyaDev.resources.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\csc.exe
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\csc.exe.config
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\csc.rsp
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\csi.exe
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\csi.rsp
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.AppContext.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\vbc.exe
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\vbc.exe.config
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\vbc.rsp
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Antlr3.Runtime.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\EntityFramework.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Newtonsoft.Json.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Abstractions.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Helpers.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Mvc.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Optimization.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Razor.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Routing.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\WebGrease.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\EntityFramework.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Helpers.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Mvc.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Optimization.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.Razor.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Antlr3.Runtime.pdb
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\bin\Newtonsoft.Json.xml
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csprojResolveAssemblyReference.cache
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.Cache
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.dll
+C:\Users\mmomm\Desktop\رؤية\RooyaDev\RooyaDev\obj\Debug\RooyaDev.pdb
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\ApplicationInsights.config
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\RooyaDev.dll.config
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\RooyaDev.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\RooyaDev.pdb
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\ar\RooyaDev.resources.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\csc.exe
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\csc.exe.config
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\csc.rsp
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\csi.exe
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\csi.rsp
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.AppContext.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\vbc.exe
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\vbc.exe.config
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\vbc.rsp
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Antlr3.Runtime.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\EntityFramework.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Newtonsoft.Json.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Abstractions.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Helpers.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Mvc.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Optimization.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Razor.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Routing.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\WebGrease.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\EntityFramework.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\EntityFramework.SqlServer.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.Web.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Helpers.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Mvc.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Optimization.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.Razor.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\System.Web.WebPages.Razor.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Antlr3.Runtime.pdb
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\bin\Newtonsoft.Json.xml
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csprojResolveAssemblyReference.cache
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.Cache
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.dll
+C:\Users\Ata Sabri\Desktop\RooyaDev\RooyaDev\obj\Debug\RooyaDev.pdb
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\ApplicationInsights.config
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.dll.config
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.pdb
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\ar\RooyaDev.resources.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.exe
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.exe.config
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.rsp
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csi.exe
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csi.rsp
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.AppContext.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.exe
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.exe.config
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.rsp
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\VBCSCompiler.exe
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Antlr3.Runtime.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.SqlServer.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Web.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Newtonsoft.Json.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Abstractions.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Helpers.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Mvc.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Optimization.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Razor.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Routing.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Razor.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\WebGrease.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.SqlServer.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Web.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Helpers.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Mvc.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Optimization.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Razor.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Razor.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Antlr3.Runtime.pdb
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Newtonsoft.Json.xml
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.Cache
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.dll
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.pdb
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csprojAssemblyReference.cache
+E:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csproj.CopyComplete
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\ApplicationInsights.config
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.dll.config
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\RooyaDev.pdb
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\ar\RooyaDev.resources.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.exe
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.exe.config
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csc.rsp
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csi.exe
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\csi.rsp
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.AppContext.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Collections.Immutable.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.IO.FileSystem.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\System.Reflection.Metadata.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.exe
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.exe.config
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\vbc.rsp
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\VBCSCompiler.exe
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\roslyn\VBCSCompiler.exe.config
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Antlr3.Runtime.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.SqlServer.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.DependencyCollector.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Web.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.WindowsServer.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.ApplicationInsights.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.Web.Infrastructure.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Newtonsoft.Json.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Abstractions.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Helpers.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Mvc.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Optimization.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Razor.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Routing.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Deployment.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Razor.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\WebGrease.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\EntityFramework.SqlServer.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.DependencyCollector.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.Web.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.AI.WindowsServer.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.ApplicationInsights.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Helpers.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Mvc.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Optimization.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.Razor.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Deployment.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\System.Web.WebPages.Razor.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Antlr3.Runtime.pdb
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\bin\Newtonsoft.Json.xml
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csprojAssemblyReference.cache
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.SiteResource.resources
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.SiteResource.ar.resources
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csproj.GenerateResource.cache
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\ar\RooyaDev.resources.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.csproj.CopyComplete
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.dll
+D:\Asp.net MVC\RooyaDev 3\RooyaDev\obj\Debug\RooyaDev.pdb

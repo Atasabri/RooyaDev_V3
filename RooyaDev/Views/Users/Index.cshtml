@@ -1,0 +1,143 @@
+﻿@model IEnumerable<RooyaDev.Models.User>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+  <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-users"> </i> <label> Users</label>
+                </div>
+
+            </div>
+        </div>
+
+    </header><!-- /header -->
+    <!-- Header-->
+
+
+    <div class="col-md-12">
+        <button data-toggle="modal" data-target="#modal1" class="btn btn-success"><i class="fa fa-plus-square"></i> &nbsp; ADD</button>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading"></div>
+            <div class="panel-body">
+                <p></p>
+            </div>
+            <form action="~/Users/SendMail" method="post" enctype="multipart/form-data">
+
+                <!-- Table -->
+                <table class="table table-hover table-bordered">
+                    <tr>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input class="check-mark" type="checkbox" onclick="toggle(this)" /></td>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-2">@item.Name</td>
+                            <td class="col-md-2">@item.Email</td>
+                            <td class="col-md-2">
+                                <a href="~/Users/Edit/@item.ID" class="btn btn-info">Edit</a>
+                            </td>
+                            <td class="col-md-2">
+                                <a href="~/Users/Details/@item.ID" class="btn btn-primary">
+                                    Details
+                                </a>
+                            </td>
+                            <td class="col-md-2">
+                                <a href="~/Users/Delete/@item.ID" onclick="return confirm('Are You Sure You Want To Delete This User ?!');" class="btn btn-danger">Delete</a>
+                            </td>
+                            <td><input type="checkbox" value="@item.Email" name="fooa" /></td>
+                        </tr>
+
+                    }
+
+                </table>
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Subject</span>
+                    <input type="text" name="Subject" required class="form-control col-md-4" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Upload File</span>
+                    <input type="file" name="file" required class="col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+                <button type="submit" class="btn btn-success">Send Mail</button>
+            </form>
+        </div>
+    </div><!-- .content -->
+
+</div> <!-- /#right-panel -->
+<!-- Right Panel -->
+
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-popup">
+            <a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+            <h3 class="white"><i class="fa fa-plus-square"></i> Add User</h3> <hr />
+            <form action="~/Users/Create" method="post">
+                @Html.AntiForgeryToken()
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                    <input type="text" name="Name" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3"> Phone</span>
+                    <input type="number" name="Phone" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <div class="input-group">
+                    <span class="input-group col-md-4" id="basic-addon3"> Email</span>
+                    <input type="email" name="Email" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <div class="input-group textarea">
+                    <span class="input-group col-md-4" id="basic-addon3"> Country</span>
+                    <input type="text" name="Country" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <div class="input-group textarea">
+                    <span class="input-group col-md-4" id="basic-addon3"> Password</span>
+                    <input type="password" name="Password" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+                </div> <br />
+
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+        function toggle(source) {
+            var all = document.querySelectorAll('input[type="checkbox"]');
+            for (var i = 0; i < all.length; i++) {
+                if (all[i] != source)
+                    all[i].checked = source.checked;
+            }
+        }
+</script>
+<!--<script>
+    $('select-all').click(function (event) {
+        if (this.checked) {
+            $(':checkbox').each(function () {
+                this.checked = true;
+            });
+        }
+    });
+</script>-->
+
+

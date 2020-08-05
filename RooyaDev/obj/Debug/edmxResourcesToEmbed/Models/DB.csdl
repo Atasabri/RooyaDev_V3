@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RooyaDevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Application">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Carrer_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrer" Relationship="Self.FK__Applicati__Carre__25869641" FromRole="Applications" ToRole="Carrers" />
+  </EntityType>
+  <EntityType Name="Carrer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Salary" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Carre__25869641" FromRole="Carrers" ToRole="Applications" />
+    <NavigationProperty Name="Requirments" Relationship="Self.FK__Requirmen__Carre__22AA2996" FromRole="Carrers" ToRole="Requirments" />
+    <NavigationProperty Name="Skills" Relationship="Self.FK__Skills__Carrer_I__1FCDBCEB" FromRole="Carrers" ToRole="Skills" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name_AR" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description_AR" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Head">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Service_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__Heads__Service_I__173876EA" FromRole="Heads" ToRole="Services" />
+    <Property Name="Name_AR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price_ID" Type="Int32" Nullable="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pricing" Relationship="Self.FK__Orders__Price_ID__33D4B598" FromRole="Orders" ToRole="Pricing" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Orders__User_ID__34C8D9D1" FromRole="Orders" ToRole="Users" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Pricing">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__Price_ID__33D4B598" FromRole="Pricing" ToRole="Orders" />
+    <Property Name="Name_AR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UnderWork" Type="Boolean" Nullable="false" />
+    <Property Name="Finished" Type="Boolean" Nullable="false" />
+    <Property Name="Expire_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="User_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Projects__User_I__2A4B4B5E" FromRole="Projects" ToRole="Users" />
+    <NavigationProperty Name="Tasks" Relationship="Self.FK__Tasks__Project_I__2D27B809" FromRole="Projects" ToRole="Tasks" />
+    <NavigationProperty Name="Project_Videos" Relationship="RooyaDevModel.FK__Project_V__Proje__02FC7413" FromRole="Project" ToRole="Project_Videos" />
+    <NavigationProperty Name="Comments" Relationship="RooyaDevModel.FK__Comments__Projec__625A9A57" FromRole="Project" ToRole="Comment" />
+  </EntityType>
+  <EntityType Name="Requirment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Carrer_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrer" Relationship="Self.FK__Requirmen__Carre__22AA2996" FromRole="Requirments" ToRole="Carrers" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Heads" Relationship="Self.FK__Heads__Service_I__173876EA" FromRole="Services" ToRole="Heads" />
+    <Property Name="Name_AR" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description_AR" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Carrer_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Carrer" Relationship="Self.FK__Skills__Carrer_I__1FCDBCEB" FromRole="Skills" ToRole="Carrers" />
+  </EntityType>
+  <EntityType Name="Subscriber">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Project_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="Self.FK__Tasks__Project_I__2D27B809" FromRole="Tasks" ToRole="Projects" />
+    <Property Name="Finished" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FaceBook" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Twitter" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LinkedIn" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__User_ID__34C8D9D1" FromRole="Users" ToRole="Orders" />
+    <NavigationProperty Name="Projects" Relationship="Self.FK__Projects__User_I__2A4B4B5E" FromRole="Users" ToRole="Projects" />
+  </EntityType>
+  <Association Name="FK__Applicati__Carre__25869641">
+    <End Role="Carrers" Type="Self.Carrer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Applications" Type="Self.Application" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="Carrer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Requirmen__Carre__22AA2996">
+    <End Role="Carrers" Type="Self.Carrer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Requirments" Type="Self.Requirment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Requirments">
+        <PropertyRef Name="Carrer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Skills__Carrer_I__1FCDBCEB">
+    <End Role="Carrers" Type="Self.Carrer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Skills" Type="Self.Skill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carrers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Skills">
+        <PropertyRef Name="Carrer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Heads__Service_I__173876EA">
+    <End Role="Services" Type="Self.Service" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Heads" Type="Self.Head" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Heads">
+        <PropertyRef Name="Service_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__Price_ID__33D4B598">
+    <End Role="Pricing" Type="Self.Pricing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pricing">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Price_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__User_ID__34C8D9D1">
+    <End Role="Users" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Projects__User_I__2A4B4B5E">
+    <End Role="Users" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Projects" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Projects">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Tasks__Project_I__2D27B809">
+    <End Role="Projects" Type="Self.Project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Tasks" Type="Self.Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tasks">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="Self.Admin" />
+    <EntitySet Name="Applications" EntityType="Self.Application" />
+    <EntitySet Name="Carrers" EntityType="Self.Carrer" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Galleries" EntityType="Self.Gallery" />
+    <EntitySet Name="Heads" EntityType="Self.Head" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="Pricings" EntityType="Self.Pricing" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="Requirments" EntityType="Self.Requirment" />
+    <EntitySet Name="Services" EntityType="Self.Service" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <EntitySet Name="Subscribers" EntityType="Self.Subscriber" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Teams" EntityType="Self.Team" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Applicati__Carre__25869641" Association="Self.FK__Applicati__Carre__25869641">
+      <End Role="Carrers" EntitySet="Carrers" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Requirmen__Carre__22AA2996" Association="Self.FK__Requirmen__Carre__22AA2996">
+      <End Role="Carrers" EntitySet="Carrers" />
+      <End Role="Requirments" EntitySet="Requirments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Skills__Carrer_I__1FCDBCEB" Association="Self.FK__Skills__Carrer_I__1FCDBCEB">
+      <End Role="Carrers" EntitySet="Carrers" />
+      <End Role="Skills" EntitySet="Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Heads__Service_I__173876EA" Association="Self.FK__Heads__Service_I__173876EA">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="Heads" EntitySet="Heads" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__Price_ID__33D4B598" Association="Self.FK__Orders__Price_ID__33D4B598">
+      <End Role="Pricing" EntitySet="Pricings" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__User_ID__34C8D9D1" Association="Self.FK__Orders__User_ID__34C8D9D1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Projects__User_I__2A4B4B5E" Association="Self.FK__Projects__User_I__2A4B4B5E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Projects" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Tasks__Project_I__2D27B809" Association="Self.FK__Tasks__Project_I__2D27B809">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="Tasks" EntitySet="Tasks" />
+    </AssociationSet>
+    <EntitySet Name="Project_Videos" EntityType="RooyaDevModel.Project_Videos" />
+    <AssociationSet Name="FK__Project_V__Proje__02FC7413" Association="RooyaDevModel.FK__Project_V__Proje__02FC7413">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Project_Videos" EntitySet="Project_Videos" />
+    </AssociationSet>
+    <EntitySet Name="Comments" EntityType="RooyaDevModel.Comment" />
+    <AssociationSet Name="FK__Comments__Projec__625A9A57" Association="RooyaDevModel.FK__Comments__Projec__625A9A57">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Project_Videos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Project_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="RooyaDevModel.FK__Project_V__Proje__02FC7413" FromRole="Project_Videos" ToRole="Project" />
+  </EntityType>
+  <Association Name="FK__Project_V__Proje__02FC7413">
+    <End Type="RooyaDevModel.Project" Role="Project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RooyaDevModel.Project_Videos" Role="Project_Videos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Project_Videos">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Comment1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Project_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="RooyaDevModel.FK__Comments__Projec__625A9A57" FromRole="Comment" ToRole="Project" />
+  </EntityType>
+  <Association Name="FK__Comments__Projec__625A9A57">
+    <End Type="RooyaDevModel.Project" Role="Project" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RooyaDevModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="Project_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

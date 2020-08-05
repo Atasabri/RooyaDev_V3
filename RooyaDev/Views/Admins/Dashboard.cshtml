@@ -1,0 +1,208 @@
+﻿@model RooyaDev.Models.DB
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+
+        <div class="header-menu">
+
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="content">
+                    <i class="fa fa-dashboard"> </i> <label> Dashboard</label>
+                </div>
+                <div class="header-left">
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </header><!-- /header -->
+    <!-- Header-->
+
+
+
+
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box facebook">
+            <a href="~/Admin/Index"><i class="fa fa-id-card"></i></a>
+            <strong><span class="count">@Model.Admins.Count() </span> | </strong>
+            <span>Admins</span><br />
+            <strong><span class="count">@Model.Admins.Where(x=>x.Type==1).Count() </span> | </strong>
+            <span>Managers</span><br />
+            <strong><span class="count">@Model.Admins.Where(x => x.Type == 0).Count() </span> | </strong>
+            <span>Not Managers</span>
+            <br />
+            <strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box twitter">
+            <a href="~/Galleries/Index"><i class="fa fa-file-o"></i></a>
+            <strong><span class="count">@Model.Galleries.Count() </span> | </strong>
+            <span>Protfolio</span><br />
+            <strong><span> </span> </strong>
+            <span></span><br />
+            <strong><span></span> </strong>
+            <br />
+            <strong><span></span> </strong>
+            <span></span>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box google-plus">
+            <a href="~/Services/Index"><i class="fa fa-briefcase"></i></a>
+            <strong><span class="count">@Model.Services.Count() </span> | </strong>
+            <span>Services</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+            <br />
+        </div>
+   
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box facebook">
+            <a href="~/subscribers/Index"><i class="fa fa-rss-square"></i></a>
+            <strong><span class="count">@Model.Subscribers.Count() </span> | </strong>
+            <span>Subscribers</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span>
+            <br />
+            <strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box twitter">
+            <a href="~/Contacts/Index"><i class="fa fa-compress"></i></a>
+            <strong><span class="count">@Model.Contacts.Count()</span> | </strong>
+            <span>contacts</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box google-plus">
+            <a href="~/Users/Index"><i class="fa fa-users"></i></a>
+            <strong><span class="count">@Model.Users.Count()</span> | </strong>
+            <span>Users</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box facebook">
+            <a href="~/Projects/Index"><i class="fa fa-product-hunt"></i></a>
+            <strong><span class="count">@Model.Projects.Count() </span> | </strong>
+            <span>Projects</span><br />
+            <strong><span class="count">@Model.Projects.Where(x=>x.UnderWork==true&&x.Finished==false).Count() </span> | </strong>
+            <span>Under Work</span><br />
+            <strong><span class="count">@Model.Projects.Where(x => x.Finished == true).Count() </span> | </strong>
+            <span>Finished</span><br />
+            <strong><span class="count">@Model.Projects.Where(x => x.Expire_Date < DateTime.Now&&x.Finished==false).Count() </span> | </strong>
+            <span>Expired</span>
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box twitter">
+            <a href="~/Pricings/Index"><i class="fa fa-money"></i></a>
+            <strong><span class="count">@Model.Pricings.Count() </span> | </strong>
+            <span>Pricing</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box google-plus">
+            <a href="~/Orders/Index"><i class="fa fa-cart-plus"></i> </a>
+            <strong><span class="count">@Model.Orders.Count() </span> | </strong>
+            <span>Orders</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box facebook">
+            <a href="~/Teams/Index"><i class="fa fa-sitemap"></i></a>
+            <strong><span class="count">@Model.Teams.Count()</span> | </strong>
+            <span>Teams</span><br />
+            <strong><span> </span> </strong>
+            <span></span><br />
+           <strong><span></span> </strong>
+           <span></span><br />
+           <strong><span></span> </strong>
+            <br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+    <div class="col-lg-3 col-md-6">
+        <div class="social-box twitter">
+            <a href="~/Carrers/Index"><i class="fa fa-tags"></i></a>
+            <strong><span class="count">@Model.Carrers.Count() </span> | </strong>
+            <span>Carrers</span><br />
+<strong><span> </span> </strong>
+<span></span><br />
+<strong><span></span> </strong>
+<span></span><br />
+<strong><span></span> </strong><br />
+        </div>
+        <!--/.box-->
+    </div><!--/.col-->
+
+
+
+
+
+</div> <!-- .content -->
+    </div><!-- /#right-panel -->

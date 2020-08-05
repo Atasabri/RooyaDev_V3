@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+    string code = "en";
+    string Dir = "";
+    if (Request.Cookies["Language"]!=null)
+    {
+        if(Request.Cookies["Language"].Value=="ar")
+        {
+            code = "ar";
+            Dir = "rtl";
+        }
+    }
+}
+<!DOCTYPE html>
+<html dir="@Dir" lang="@code">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@SiteResource.Login</title>
+    <meta name="viewport" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="~/images/Ro2iaen.png">
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet" />
+    <link href="~/Content/icomoon.css" rel="stylesheet" />
+    <style>
+        h2 {
+            color: white;
+        }
+    </style>
+    <style>
+        #messages {
+            padding: 15px 10px;
+            margin: 15px 0;
+            border: 1px solid #ff9900;
+            color: #ff9900;
+            text-align: center;
+        }
+
+            #messages p {
+                color: #555;
+                font-size: 14px;
+                font-weight: 700;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-offset-4 col-md-4" id="box">
+                <h4>
+                    @if (code == "en")
+                    {
+                        <a href="~/Home/Register" class="btn btn-md btn-danger pull-right">@SiteResource.Register</a>
+                        <a href="~/Home/Language?Code=ar"><img src="~/images/ar.png" /></a>
+                    }
+                    else
+                    {
+                        <a href="~/Home/Language?Code=en" class="pull-right"><img src="~/images/en.png" /></a>
+                        <a href="~/Home/Register" class="btn btn-md btn-danger pull-left">@SiteResource.Register</a>
+                    }
+                </h4>
+                <h2> @SiteResource.Login</h2>
+                @if (ViewBag.error != null)
+                {
+                    <div id="messages">
+                        <h4>@ViewBag.error</h4>
+                    </div>
+                }
+                <hr />
+                <form class="form-horizontal" action="~/Home/Login" method="post" id="contact_form">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-user"></i></span>
+                                    <input name="email" placeholder="@SiteResource.Email" class="form-control" type="email" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="icon icon-lock"></i></span>
+                                    <input name="password" placeholder="@SiteResource.Password" class="form-control" type="password" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-md btn-info pull-right">@SiteResource.Login</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

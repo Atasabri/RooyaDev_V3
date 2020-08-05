@@ -1,0 +1,14 @@
+﻿@using RooyaDev.Models
+<div class="col-md-8" id="DIV">
+    <table class="table table-hover text-center">
+        @if (Session["Comments"] != null)
+        {
+            foreach (var item in Session["Comments"] as List<Comment>)
+            {
+                <tr>
+                    <td>@item.Comment1</td>
+                </tr>
+            }
+        }
+    </table>
+</div>

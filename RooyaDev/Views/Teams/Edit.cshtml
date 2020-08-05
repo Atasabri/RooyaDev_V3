@@ -1,0 +1,61 @@
+﻿@model RooyaDev.Models.Team
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <!-- Right Panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <div class="header-menu">
+            <div class="col-sm-7">
+                <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                <div class="center">
+                    <i class="fa fa-pencil"> </i> <label> Edit Employee</label>
+                </div>
+                <div class="header-left">
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <!-- Header-->
+    <div class="col-md-12">
+        <h3 class="white"><i class="fa fa-pencil"></i> Edit Employee</h3> <hr />
+        <form action="~/Teams/Edit" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            @Html.Hidden("ID",Model.ID)
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Name</span>
+                <input type="text" name="Name" value="@Model.Name" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Job</span>
+                <input type="text" name="Job"value="@Model.Job" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3"> Facebook</span>
+                <input type="url" name="FaceBook" value="@Model.FaceBook" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3"> Twitter</span>
+                <input type="url" name="Twitter" value="@Model.Twitter" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group textarea">
+                <span class="input-group col-md-4" id="basic-addon3"> Linkedin</span>
+                <input type="url" name="LinkedIn" value="@Model.LinkedIn" required class="form-control col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <div class="input-group">
+                <span class="input-group col-md-4" id="basic-addon3">Upload Photo</span>
+                <input type="file" name="Photo" class="col-md-8" id="basic-url" aria-describedby="basic-addon3">
+            </div> <br />
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+</div>

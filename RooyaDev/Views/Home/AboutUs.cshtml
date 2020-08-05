@@ -1,0 +1,157 @@
+﻿@model IEnumerable<RooyaDev.Models.Team>
+@using RooyaDev.Models
+@{
+    ViewBag.Title = SiteResource.About;
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    string code = "en";
+    string aa = "right";
+    if (Request.Cookies["Language"] != null)
+    {
+        if (Request.Cookies["Language"].Value == "ar")
+        {
+            code = "ar";
+            aa = "left";
+        }
+    }
+}
+
+@section Head{
+
+    <div class="col-xs-10 text-@aa menu-1">
+        <ul>
+            <li><a href="~/Home/Index">@SiteResource.Home</a></li>
+            <li><a href="~/Home/Gallery">@SiteResource.Portfolio</a></li>
+            <li class="has-dropdown">
+                <a href="~/Home/Services">@SiteResource.Services</a>
+                <ul class="dropdown">
+                    @if (code == "en")
+                    {
+                        foreach (var item in new DB().Services.ToList())
+                        {
+                            <li><a href="~/Home/Service/@item.ID">@item.Name</a></li>
+                        }
+                    }
+                    else
+                    {
+                        foreach (var item in new DB().Services.ToList())
+                        {
+                            <li><a href="~/Home/Service/@item.ID">@item.Name_AR</a></li>
+                        }
+                    }
+
+
+                </ul>
+            </li>
+            <li class="active"><a href="~/Home/AboutUs">@SiteResource.About</a></li>
+            <li class=""><a href="~/Home/carrers">@SiteResource.Carrers</a></li>
+            <li><a href="~/Home/Pricing">@SiteResource.Pricing</a></li>
+            <li><a href="~/Home/ContactUs">@SiteResource.Contact</a></li>
+            
+           
+            
+            @if (Session["Login"] != null)
+            {
+                int ID = (int)Session["Login"];
+                User user = new DB().Users.Find(ID);
+                <li class="has-dropdown">
+                    <a href="">@SiteResource.Projects</a>
+                    <ul class="dropdown">
+                        @foreach (var item in new DB().Projects.Where(x => x.User_ID == ID && x.UnderWork == true))
+                        {
+                            <li><a href="~/Home/Project/@item.ID">@item.Name</a></li>
+                        }
+                    </ul>
+                </li>
+               
+                <li class="has-dropdown">
+                    <a href="">@user.Name</a>
+                    <ul class="dropdown">
+                        <li><a href="~/Home/SignOut">@SiteResource.SignOut</a></li>
+                    </ul>
+                </li>
+            }
+            else
+            {
+                
+                <li class="btn-cta"><a href="~/Home/Login"><span>@SiteResource.Login</span></a></li>
+                <li class="btn-cta"><a href="~/Home/Register"><span>@SiteResource.Register</span></a></li>
+            }
+            @if (code == "en")
+            {
+                <li>
+                    <a href="~/Home/Language?Code=ar">AR</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="~/Home/Language?Code=en">EN</a>
+                </li>
+            }
+        </ul>
+    </div>
+        <!-- jQuery -->
+<script src="~/Scripts/Script/jquery.min.js"></script>
+
+}
+<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image: url(../../images/aboutus.jpg); ">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div class="display-t">
+                    <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                        <h1>About Us</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div id="fh5co-about">
+    <div class="container">
+        <div class="about-content">
+            <div class="row animate-box">
+                <div class="col-md-12">
+                    <div class="desc">
+                        <h3>@SiteResource.Whow</h3>
+                        <p>@SiteResource.WhowDesc</p>
+                    </div>
+                    @*<div class="desc">
+                        <h3>@SiteResource.WhyRooya</h3>
+                        <p>@SiteResource.WhyDesc</p>
+                    </div>*@
+                </div>
+                @*<div class="col-md-6 col-md-pull-6">
+                    <img class="img-responsive" src="../../images/HISTORY.jpg" alt="about">
+                    <img class="img-responsive" src="../../images/MISSION.jpg" alt="about">
+                </div>*@
+
+            </div>
+        </div>
+        <div class="row animate-box">
+            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                <h2>@SiteResource.Team</h2>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-4 animate-box" data-animate-effect="fadeIn">
+                    <div class="fh5co-staff">
+                        <img src="~/Uploads/Team/@(item.ID).jpg" alt="@item.Name">
+                        <h3>@item.Name</h3>
+                        <strong class="role">@item.Job</strong>
+                        <ul class="fh5co-social-icons">
+                            <li><a href="@item.FaceBook"><i class="icon-facebook"></i></a></li>
+                            <li><a href="@item.Twitter"><i class="icon-twitter"></i></a></li>
+                            <li><a href="@item.LinkedIn"><i class="icon-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            }   
+         </div>
+    </div>
+</div>

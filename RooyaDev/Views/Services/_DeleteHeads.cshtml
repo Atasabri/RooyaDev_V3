@@ -1,0 +1,24 @@
+﻿@model RooyaDev.Models.Service
+<div id="DIV1">
+    <table class="table table-info table-hover table-bordered">
+        <tr>
+            <td>Head</td>
+            <td>Head AR</td>
+            <td>Delete</td>
+        </tr>
+        @foreach (var item in Model.Heads)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Name_AR</td>
+                <td>
+                    @using (Ajax.BeginForm("DeleteHead", new { id = item.ID }, new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "DIV", InsertionMode = InsertionMode.Replace }))
+                    {
+                        <button type="submit"><i class="fa fa-times"></i></button>
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
